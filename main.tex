@@ -1,0 +1,332 @@
+% !TeX spellcheck = en-US
+% !TeX encoding = utf8
+% !TeX program = pdflatex
+% !BIB program = biber
+% -*- coding:utf-8 mod:LaTeX -*-
+
+
+% vv  scroll down to line 200 for content  vv
+
+
+\let\ifdeutsch\iffalse
+\let\ifenglish\iftrue
+
+
+\input{pre-documentclass}
+\documentclass[
+  %
+  %ngerman, %%% Add if you write in German.
+  %
+  % fontsize=11pt is the standard
+  a4paper,  % Standard format - only KOMAScript uses paper=a4 - https://tex.stackexchange.com/a/61044/9075
+  twoside,  % we are optimizing for both screen and two-side printing. So the page numbers will jump, but the content is configured to stay in the middle (by using the geometry package)
+  bibliography=totoc,
+  %               idxtotoc,   %Index ins Inhaltsverzeichnis
+  %               liststotoc, %List of X ins Inhaltsverzeichnis, mit liststotocnumbered werden die Abbildungsverzeichnisse nummeriert
+  headsepline,
+  cleardoublepage=empty,
+  parskip=half,
+  %               draft    % um zu sehen, wo noch nachgebessert werden muss - wichtig, da Bindungskorrektur mit drin
+  draft=false
+]{scrbook}
+\input{config}
+
+
+\usepackage[
+  title={Visualizing Sleep Wellness: Data Physicalization as a Motivational Tool}, % Do not forget to capitalize your title correctly, you may use the following page to help you: https://capitalizemytitle.com/
+  author={Marcus Reiners},
+  email={marcus.reiners@campus.lmu.de},
+  type=bachelor,
+  institute={Institut für Informatik}, % or other institute names - or just a plain string using {Demo\\Demo...}
+  course={Medieninformatik},
+  examiner={Prof.\ Dr.\ Sven Mayer},
+  supervisor={Henrike Weing\"artner,\ M.Sc.\\Luke Haliburton,\ M.A.Sc.},
+  startdate={November 23, 2022},
+  enddate={March 23, 2022},
+  % Falls keine Lizenz gewünscht wird bitte auf "none" setzen
+  % Die Lizenz erlaubt es zu nichtkommerziellen Zwecken die Arbeit zu
+  % vervielfältigen und Kopien zu machen. Dabei muss aber immer der Autor
+  % angegeben werden. Eine kommerzielle Verwertung ist für den Autor
+  % weiter möglich.
+  copyright=ccbysa, % ccbysa, ccbynosa, cc0, none
+  language=english
+]{lmu-thesis-cover}
+
+\input{acronyms}
+
+\makeindex
+
+\begin{document}
+
+%tex4ht-Konvertierung verschönern
+\iftex4ht
+  % tell tex4ht to create picures also for formulas starting with '$'
+  % WARNING: a tex4ht run now takes forever!
+  
+  %\Configure{$}{\PicMath}{\EndPicMath}{}
+  %$ % <- syntax highlighting fix for emacs
+  \Css{body {text-align:justify;}}
+
+  %conversion of .pdf to .png
+  \Configure{graphics*}
+  {pdf}
+  {\Needs{"convert \csname Gin@base\endcsname.pdf
+      \csname Gin@base\endcsname.png"}%
+    \Picture[pict]{\csname Gin@base\endcsname.png}%
+  }
+\fi
+
+%\VerbatimFootnotes %verbatim text in Fußnoten erlauben. Geht normalerweise nicht.
+
+\input{commands}
+\pagenumbering{arabic}
+\Coverpage
+\Copyright
+%Eigener Seitenstil fuer die Kurzfassung und das Inhaltsverzeichnis
+\deftriplepagestyle{preamble}{}{}{}{}{}{\pagemark}
+%Doku zu deftriplepagestyle: scrguide.pdf
+\pagestyle{preamble}
+\renewcommand*{\chapterpagestyle}{preamble}
+
+
+
+%Kurzfassung / abstract
+%auch im Stil vom Inhaltsverzeichnis
+\section*{Kurzfassung}
+
+<Short summary of the thesis>
+
+\cleardoublepage
+
+\section*{Abstract}
+
+<Short summary of the thesis>
+
+\cleardoublepage
+
+
+% BEGIN: Verzeichnisse
+
+\iftex4ht
+\else
+  \microtypesetup{protrusion=false}
+\fi
+
+%%%
+% Literaturverzeichnis ins TOC mit aufnehmen, aber nur wenn nichts anderes mehr hilft!
+% \addcontentsline{toc}{chapter}{Literaturverzeichnis}
+%
+% oder zB
+%\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+%
+%%%
+
+%Produce table of contents
+%
+%In case you have trouble with headings reaching into the page numbers, enable the following three lines.
+%Hint by http://golatex.de/inhaltsverzeichnis-schreibt-ueber-rand-t3106.html
+%
+%\makeatletter
+%\renewcommand{\@pnumwidth}{2em}
+%\makeatother
+%
+\tableofcontents
+
+% Bei einem ungünstigen Seitenumbruch im Inhaltsverzeichnis, kann dieser mit
+% \addtocontents{toc}{\protect\newpage}
+% an der passenden Stelle im Fließtext erzwungen werden.
+
+\listoffigures
+\listoftables
+
+% Control List of Listings
+\let\iflistings\iffalse
+%Wird nur bei Verwendung von der lstlisting-Umgebung mit dem "caption"-Parameter benoetigt
+%\lstlistoflistings
+%ansonsten:
+\iflistings
+  \ifdeutsch
+    \listof{Listing}{Verzeichnis der Listings}
+  \else
+    \listof{Listing}{List of Listings}
+  \fi
+\fi
+
+% Control List of Algorithms
+\let\ifalgorithms\iffalse
+\ifalgorithms
+  %mittels \newfloat wurde die Algorithmus-Gleitumgebung definiert.
+  %Mit folgendem Befehl werden alle floats dieses Typs ausgegeben
+  \ifdeutsch
+    \listof{Algorithmus}{Verzeichnis der Algorithmen}
+  \else
+    \listof{Algorithmus}{List of Algorithms}
+  \fi
+  %\listofalgorithms %Ist nur für Algorithmen, die mittels \begin{algorithm} umschlossen werden, nötig
+\fi
+
+% Control Glossary
+\let\ifglossary\iffalse
+\ifglossary
+  \printnoidxglossaries
+\fi
+
+\iftex4ht
+\else
+  %Optischen Randausgleich und Grauwertkorrektur wieder aktivieren
+  \microtypesetup{protrusion=true}
+\fi
+
+% END: Verzeichnisse
+
+
+% Headline and footline
+\renewcommand*{\chapterpagestyle}{scrplain}
+\pagestyle{scrheadings}
+\pagestyle{scrheadings}
+\ihead[]{}
+\chead[]{}
+\ohead[]{\headmark}
+\cfoot[]{}
+\ofoot[\usekomafont{pagenumber}\thepage]{\usekomafont{pagenumber}\thepage}
+\ifoot[]{}
+
+
+%% vv  scroll down for content  vv %%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Main content starts here
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Introduction}
+\label{sec:introduction}
+
+This is a typical human-computer interaction thesis structure for an introduction which is structured in four paragraphs as follows:
+% First Paragraph
+% CORE MESSAGE OF THIS PARAGRAPH:
+\todo{P1.1. What is the large scope of the problem?}
+-Sleep-related issues and their impact on overall well-being
+\newline
+-Lack of effective motivational tools for individuals to monitor and improve their sleep
+\todo{P1.2. What is the specific problem?}
+-The limited exploration of Sleep Data-Physicalization
+% Second Paragraph
+% CORE MESSAGE OF THIS PARAGRAPH:
+\todo{P2.1. The second paragraph should be about what have others been doing}
+-Data Physicalization of Activity-Data
+\todo{P2.2. Why is the problem important? Why was this work carried out?}
+-Sleep health is a significant concern in modern society
+\newline
+-Lack of tools to engage and motivate individuals in prioritizing their sleep
+% Third Paragraph
+% CORE MESSAGE OF THIS PARAGRAPH:
+\todo{P3.1. What have you done?}
+-conducted two online surveys to find a desired Design approach
+\newline
+-Develop and test a Prototype
+\todo{P3.2. What is new about your work?}
+-Exploration of data physicalization as a means to engage and motivate users in their sleep wellness
+% Fourth paragraph
+% CORE MESSAGE OF THIS PARAGRAPH:
+\todo{P4.1. What did you find out? What are the concrete results?}
+\todo{P4.2. What are the implications? What does this mean for the bigger picture?}
+
+LaTeX hints are provided in \autoref{chap:latexhints}.
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Related Work}
+
+Sleep is a critical aspect of human well-being, and understanding and improving sleep quality is of great interest in both medical and personal contexts. This section provides an overview of the existing literature on visualizing health data and the use of data physicalization as a motivational tool.
+
+\section{Importance of Sleep}
+
+Good sleep is essential for good health \cite{buysse_sleep_2014, grandner_sleep_2017, ramar_sleep_2021}. Historically, the focus on health and sleep has mainly centered around sleep disorders and, more recently, not getting enough sleep. While it's crucial to address these disorders and deficiencies, the concept of sleep health encompasses the overall well-being of individuals or populations\cite{buysse_sleep_2014}.
+\newline
+-one of three pillars for a healthy life
+\newline
+\newline
+\textbf{Consequences of Sleep Deprivation.}
+Insufficient sleep duration and poor sleep quality have been linked to various detrimental health consequences. Several sources of literature have highlighted the negative effects of inadequate sleep duration, sleep apnea, and insomnia on mortality, weight gain, diabetes, inflammation, cardiovascular disease, cognitive function, and mental health. \cite{grandner_sleep_2017}
+
+\section{Sleep Tracking and Visualizations}
+Sleep tracking, originally designed for scientific investigations, has now become accessible for individuals to monitor their own sleep well-being. 
+\subsection{Sleep Tracking Technologies}
+Sleep tracking technologies have gained considerable interest in recent years as valuable tools for monitoring and assessing sleep patterns. These technologies utilize various sensors and devices to collect data on an individual's sleep duration, sleep stages, movement, and environmental factors. Consumer-oriented devices like a wearable fitness tracker or a smartphone app have the potential to enhance overall sleep well-being, by measuring the sleep duration, giving a rating of the overall sleep quality, and waking the user during light sleep phases \cite{kolla_consumer_2016}.
+\newline
+\newline
+\textbf{Impact of Sleep Tracking.}
+Tracking raises awareness of sleep patterns \cite{liang_sleep_2016}. Conducted Studies of participants with assumed poor sleep quality reported that using sleep tracking devices mainly raised their awareness on sleep hygiene and helped them test their assumptions \cite{liang_sleep_2016}. Tracking rarely helps to improve sleep \cite{liang_sleep_2016}.
+\newline
+Barriers: Lack of Reference Points, Lack of Accuracy, Not Providing Motivation \cite{liang_sleep_2016}
+
+\subsection{Sleep Visualization Techniques}
+
+Visualizing sleep data plays an important role in providing meaningful insights and understanding sleep patterns. Various visualization techniques have been developed to represent sleep-related information.
+\section{Motivational Aspects in Sleep Wellness}
+-Challenges and Oppotunities for Sleep Tracking \cite{liu_bed_2015}
+\newline
+-persuasive design
+\section{Data Physicalization as a Motivational Tool}
+A data physicalization is a physical artifact whose geometry or material properties encode data \cite{jansen_opportunities_2015}.
+\newline
+\newline
+\textbf{The Benefits of Data Physicalization}
+-Leveraging our Perceptual Exploration Skills
+\newline
+-Making Data Accessible
+\newline
+-Cognitive Benefits
+\newline
+-Bringing Data into the Real World
+\newline
+-Engaging People
+
+
+\chapter{Method}
+
+\chapter{Results}
+
+\chapter{Discussion and Future Work}
+\section{Discussion}
+\section{Limitations}
+\section{Future Work}
+
+\chapter{Conclusion}
+
+
+\printbibliography
+
+All links were last followed on \today.
+
+\appendix
+%\input{latexhints/latexhints-english}
+
+\pagestyle{empty}
+\renewcommand*{\chapterpagestyle}{empty}
+\Affirmation
+\end{document}
