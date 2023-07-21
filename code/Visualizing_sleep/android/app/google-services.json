@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "816451337512",
+    "firebase_url": "https://visualizing-sleep-default-rtdb.firebaseio.com",
+    "project_id": "visualizing-sleep",
+    "storage_bucket": "visualizing-sleep.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816451337512:android:26cce42fdec97bc54a641d",
+        "android_client_info": {
+          "package_name": "com.example.visualizing_sleep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816451337512-7tq5n8u4lu7qhqa96pufpjc9o6aokpnt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Fc_ArXX5lmFJcUYDEnoX5drJcrpvChQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816451337512-7tq5n8u4lu7qhqa96pufpjc9o6aokpnt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "816451337512-tlkgpm7susubrfd1tknu097v8aspdoi2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.visualizingSleep"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
