@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:visualizing_sleep/firebase_service.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -10,11 +11,13 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await FirebaseAuth.instance.signInAnonymously();
-  runApp(const HealthApp());
+  runApp(HealthApp());
 }
 
 class HealthApp extends StatefulWidget {
-  const HealthApp({super.key});
+  HealthApp({super.key});
+
+  final FirebaseService firebaseService = FirebaseService();
 
   @override
   _HealthAppState createState() => _HealthAppState();
@@ -88,6 +91,10 @@ class _HealthAppState extends State<HealthApp> {
       // fetch health data
       List<HealthDataPoint> healthData =
           await health.getHealthDataFromTypes(startDate, endDate, types);
+
+      // Upload the sleep data to Firebase
+      await widget.firebaseService.uploadSleepData(healthData);
+
       // save all the new data points (only the first 100)
       _healthDataList.addAll(
           (healthData.length < 100) ? healthData : healthData.sublist(0, 100));
