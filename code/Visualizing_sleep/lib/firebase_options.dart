@@ -65,7 +65,8 @@ class DefaultFirebaseOptions {
     projectId: 'visualizing-sleep',
     databaseURL: 'https://visualizing-sleep-default-rtdb.firebaseio.com',
     storageBucket: 'visualizing-sleep.appspot.com',
-    iosClientId: '816451337512-tlkgpm7susubrfd1tknu097v8aspdoi2.apps.googleusercontent.com',
+    iosClientId:
+        '816451337512-tlkgpm7susubrfd1tknu097v8aspdoi2.apps.googleusercontent.com',
     iosBundleId: 'com.example.visualizingSleep',
   );
 }

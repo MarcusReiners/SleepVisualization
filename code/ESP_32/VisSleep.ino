@@ -153,6 +153,15 @@ void loop() {
   delay(1000);
 }
 
+// This function draws a bar representing a sleep stage on the TFT display.
+  // The position and height of the bar are determined based on the total sleep duration and the duration of the specific sleep stage.
+  // Arguments:
+  // - displayWidth: The width of the TFT display.
+  // - totalDuration: The total duration of all sleep stages.
+  // - displayHeight: The height of the TFT display.
+  // - yOffset: The y-coordinate of the bottom of the bar. This value is updated after each bar is drawn.
+  // - duration: The duration of the specific sleep stage being represented.
+  // - color: The color of the bar.
 void drawSleepStageBar(int displayWidth, int totalDuration, int displayHeight, int& yOffset, int duration, uint16_t color) {
   int barHeight = (duration / static_cast<double>(totalDuration)) * static_cast<double>(displayHeight) + 1; // Assuming 24 hours in a day
   tft.fillRect(0, yOffset - barHeight, displayWidth, barHeight, color);
@@ -160,6 +169,14 @@ void drawSleepStageBar(int displayWidth, int totalDuration, int displayHeight, i
   yOffset -= barHeight;
 }
 
+// This function creates a flame effect animation on the RGB LED.
+  // The flame effect is created by varying the brightness of the red and green LED pins, with a small amount of flickering.
+  // Arguments:
+  // - redPin: The pin connected to the red component of the RGB LED.
+  // - greenPin: The pin connected to the green component of the RGB LED.
+  // - bluePin: The pin connected to the blue component of the RGB LED.
+  // - ledBrightness: The initial brightness of the LED.
+  // - qualityVal: A value representing the quality of sleep, used to adjust the flickering effect.
 void flameEffect(int redPin, int greenPin, int bluePin, int ledBrightness, int qualityVal) {
   for (int i = 0; i <= 100; i++) {
     for(int i = 0; i <= 10; i++) {

@@ -1,17 +1,33 @@
 /**
- * Import function triggers from their respective submodules:
+ * Cloud Function: setSleepDuration
+ * 
+ * This function triggers on any write event to the specified database reference. 
+ * It calculates and sets various sleep-related metrics for the specified user (identified by the unique ID: 'AndroidSKQ1210908001')
+ * based on the new data written to the database.
  *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
+ * The following metrics are calculated and set in the database:
+ * 1. Sleep Efficiency: The ratio of total sleep duration to the time spent awake.
+ * 2. Sleep Duration: The total duration of sleep.
+ * 3. Awakenings: The number of times the user woke up.
+ * 4. Light Sleep: The duration of light sleep.
+ * 5. Deep Sleep: The duration of deep sleep.
+ * 6. REM (Rapid Eye Movement) Sleep: The duration of REM sleep.
+ * 7. Awake: The duration spent awake.
  *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
+ * These metrics are stored in the following database structure:
+ * /AndroidSKQ1210908001/data/<MetricName>
+ *
+ * @param {Object} change - The delta representing the changes to the data.
+ * @param {Object} context - The context in which the event occurred.
+ *
+ * @returns {Promise} A promise that will be resolved once all metrics have been set in the database.
  */
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 
 admin.initializeApp();
 
-exports.setSleepDuration = functions.database
+exports.setSleepData = functions.database
     .ref("/AndroidSKQ1210908001")
     .onWrite((change, context) => {
       if (!change.after.exists()) {
@@ -19,39 +35,49 @@ exports.setSleepDuration = functions.database
       }
 
       const newValue = change.after.val(); // Extract the new value
-      const date = "2023-10-16";
-      const sleepDuration = parseInt(newValue[date]["0"]["value"]);
+      const date = new Date();
+      const day = date.getDate();
+      const month = date.getMonth()+1;
+      const year = date.getFullYear();
 
-      const keys = Object.keys(newValue[date]);
+      const fullDate = `${year}-${month}-${day}`;
+
+
+      const sleepDuration = parseInt(newValue[fullDate]["0"]["value"]);
+
+      const keys = Object.keys(newValue[fullDate]);
 
       const promises = [];
 
       let lightSleep = 0;
-      let deepSlepp = 0;
+      let deepSleep = 0;
       let rem = 0;
       let awake = 0;
+      let awakeningAmount = 0;
 
       for (const key of keys) {
-        const sleepType = newValue[date][key]["sleepType"];
-        const childValue = parseInt(newValue[date][key]["value"]);
+        const sleepType = newValue[fullDate][key]["sleepType"];
+        const childValue = parseInt(newValue[fullDate][key]["value"]);
         if (sleepType == "HealthDataType.SLEEP_LIGHT") {
           lightSleep += childValue;
         } else if (sleepType == "HealthDataType.SLEEP_DEEP") {
-          deepSlepp += childValue;
+          deepSleep += childValue;
         } else if (sleepType == "HealthDataType.SLEEP_REM") {
           rem += childValue;
         } else if (sleepType == "HealthDataType.SLEEP_AWAKE") {
+          awakeningAmount += 1;
           awake += childValue;
         }
       }
 
-      const sleepQuality = parseInt(((sleepDuration-awake)/sleepDuration)*100);
+      const sleepEfficiency =
+      parseInt(((sleepDuration-awake)/sleepDuration)*100);
 
       const sleepQualityEntry = admin.database()
-          .ref(`/AndroidSKQ1210908001/data/SleepQuality`)
-          .set(sleepQuality)
+          .ref(`/AndroidSKQ1210908001/data/SleepEfficiency`)
+          .set(sleepEfficiency)
           .catch((error) => {
-            console.error("Error setting SleepQuality:", error);
+            console.error("Error setting SleepEfficiency:", error);
           });
 
       promises.push(sleepQualityEntry);
@@ -65,6 +91,15 @@ exports.setSleepDuration = functions.database
 
       promises.push(sleepDurationEntry);
 
+      const sleepAwakeningsEntry = admin.database()
+          .ref(`/AndroidSKQ1210908001/data/Awakenings`)
+          .set(parseInt(awakeningAmount))
+          .catch((error) => {
+            console.error("Error setting Awakening amount:", error);
+          });
+
+      promises.push(sleepAwakeningsEntry);
+
       const lightSleepEntry = admin.database()
           .ref(`/AndroidSKQ1210908001/data/LightSleep`)
           .set(lightSleep)
@@ -76,7 +111,7 @@ exports.setSleepDuration = functions.database
 
       const deepSleepEntry = admin.database()
           .ref(`/AndroidSKQ1210908001/data/DeepSleep`)
-          .set(deepSlepp)
+          .set(deepSleep)
           .catch((error) => {
             console.error("Error setting DeepSleep:", error);
           });

@@ -1,3 +1,33 @@
+/// Visualizing Sleep Application
+///
+/// This Flutter application is designed to visualize sleep data by interfacing with health data,
+/// fetching sleep metrics, and uploading them to Firebase for further analysis and visualization.
+///
+/// The app also utilizes background services to continuously fetch and synchronize data even when the app is in the background.
+///
+/// Libraries and Packages:
+/// - firebase_core, firebase_auth: For Firebase initialization and user authentication.
+/// - flutter_background_service: To create a background service for fetching and uploading data.
+/// - flutter_background_service_android, flutter_background_service_ios: Platform-specific implementations of background service.
+/// - flutter_local_notifications: To show notifications.
+/// - health: To access health data.
+/// - permission_handler: To handle permissions required to access health data.
+///
+/// Main components:
+/// - HealthApp: The main widget which starts the application.
+/// - initializeService: Configures and starts the background service.
+/// - authorize: Requests necessary permissions and authorizes health data access.
+/// - fetchData: Fetches health data and uploads it to Firebase.
+///
+/// Background Service:
+/// The background service is configured to start on app launch and runs periodically every minute.
+/// It fetches health data and uploads it to Firebase, also providing a local notification upon data synchronization.
+///
+/// Health Data:
+/// The app accesses various types of sleep data, which are then uploaded to Firebase for further analysis.
+///
+/// @author Marcus Reiners
+
 import 'dart:async';
 import 'dart:io';
 
@@ -59,7 +89,7 @@ Future<void> initializeService() async {
   );
 
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   if (Platform.isIOS || Platform.isAndroid) {
     await flutterLocalNotificationsPlugin.initialize(
@@ -72,7 +102,7 @@ Future<void> initializeService() async {
 
   await flutterLocalNotificationsPlugin
       .resolvePlatformSpecificImplementation<
-      AndroidFlutterLocalNotificationsPlugin>()
+          AndroidFlutterLocalNotificationsPlugin>()
       ?.createNotificationChannel(channel);
 
   await service.configure(
@@ -108,7 +138,7 @@ void onStart(ServiceInstance service) async {
   DartPluginRegistrant.ensureInitialized();
 
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   if (service is AndroidServiceInstance) {
     service.on('setAsForeground').listen((event) {
@@ -148,14 +178,14 @@ Future authorize() async {
 
   // Check if we have permission
   bool? hasPermissions =
-  await health.hasPermissions(types, permissions: permissions);
+      await health.hasPermissions(types, permissions: permissions);
 
   bool authorized = false;
   if (!hasPermissions!) {
     // requesting access to the data types before reading them
     try {
       authorized =
-      await health.requestAuthorization(types, permissions: permissions);
+          await health.requestAuthorization(types, permissions: permissions);
     } catch (error) {
       print("Exception in authorize: $error");
     }
@@ -167,7 +197,7 @@ Future fetchData(DateTime startDate, DateTime endDate) async {
   try {
     // fetch health data
     List<HealthDataPoint> healthData =
-    await health.getHealthDataFromTypes(startDate, endDate, types);
+        await health.getHealthDataFromTypes(startDate, endDate, types);
 
     await firebaseService.initializeFirebase();
 
