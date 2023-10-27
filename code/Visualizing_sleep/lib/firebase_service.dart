@@ -6,14 +6,19 @@ import 'package:health/health.dart';
 import 'package:intl/intl.dart';
 import 'firebase_options.dart';
 
+/// A service class for interacting with Firebase.
 class FirebaseService {
 
+  /// Initializes Firebase.
   @pragma('vm:entry-point')
   Future<void> initializeFirebase() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   }
 
+  /// Uploads sleep data to Firebase.
+  ///
+  /// The [sleepData] parameter is a list of [HealthDataPoint] objects representing sleep data.
   @pragma('vm:entry-point')
   uploadSleepData(List<HealthDataPoint> sleepData) async {
     final databaseReference = FirebaseDatabase.instance.ref();
@@ -37,7 +42,7 @@ class FirebaseService {
       }
     }
 
-// Remove the elements at the collected indices in reverse order
+    // Remove the elements at the collected indices in reverse order
     for (int index in indicesToRemove.reversed) {
       sleepData.removeAt(index);
     }

@@ -6,7 +6,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:flutter_background_service_android/flutter_background_service_android.dart';
 import 'package:flutter_background_service_ios/flutter_background_service_ios.dart';
-//import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:visualizing_sleep/firebase_options.dart';
 import 'package:visualizing_sleep/firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,15 +16,15 @@ import 'package:permission_handler/permission_handler.dart';
 
 import 'HomePage.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   authorize();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await Permission.notification.isDenied.then(
-        (value) {
-      if (value) {Permission.notification.request();}
-    },);
+  await Permission.notification.isDenied.then((value) {
+    if (value) {
+      Permission.notification.request();
+    }
+  });
   runApp(const HealthApp());
 }
 
@@ -41,7 +40,6 @@ final types = [
 DateTime now = DateTime.now();
 DateTime start = now.subtract(const Duration(days: 7));
 
-
 // create a HealthFactory for use in the app
 HealthFactory health = HealthFactory(useHealthConnectIfAvailable: true);
 
@@ -54,14 +52,14 @@ Future<void> initializeService() async {
   final service = FlutterBackgroundService();
 
   const AndroidNotificationChannel channel = AndroidNotificationChannel(
-      'Visualizing Sleep',
-      'Visualizing Sleep',
-      description: 'Uploading Sleep Data...',
-      importance: Importance.low,
+    'Visualizing Sleep',
+    'Visualizing Sleep',
+    description: 'Uploading Sleep Data...',
+    importance: Importance.low,
   );
 
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  FlutterLocalNotificationsPlugin();
 
   if (Platform.isIOS || Platform.isAndroid) {
     await flutterLocalNotificationsPlugin.initialize(
@@ -80,22 +78,19 @@ Future<void> initializeService() async {
   await service.configure(
     iosConfiguration: IosConfiguration(
       autoStart: true,
-
       onForeground: onStart,
       onBackground: onIosBackground,
-  ),
-      androidConfiguration: AndroidConfiguration(
-          onStart: onStart,
-
-          isForegroundMode: true,
-          autoStart: true,
-
-          notificationChannelId: 'Visualizing Sleep',
-          initialNotificationTitle: 'Visualizing Sleep',
-          initialNotificationContent: 'Initializing',
-          foregroundServiceNotificationId: 888,
-          autoStartOnBoot: true,
-      ),
+    ),
+    androidConfiguration: AndroidConfiguration(
+      onStart: onStart,
+      isForegroundMode: true,
+      autoStart: true,
+      notificationChannelId: 'Visualizing Sleep',
+      initialNotificationTitle: 'Visualizing Sleep',
+      initialNotificationContent: 'Initializing',
+      foregroundServiceNotificationId: 888,
+      autoStartOnBoot: true,
+    ),
   );
 
   service.startService();
@@ -113,7 +108,7 @@ void onStart(ServiceInstance service) async {
   DartPluginRegistrant.ensureInitialized();
 
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  FlutterLocalNotificationsPlugin();
 
   if (service is AndroidServiceInstance) {
     service.on('setAsForeground').listen((event) {
@@ -127,17 +122,17 @@ void onStart(ServiceInstance service) async {
     if (service is AndroidServiceInstance) {
       if (await service.isForegroundService()) {
         flutterLocalNotificationsPlugin.show(
-            888,
-            'Visualizing Sleep',
-            'upload',
-            const NotificationDetails(
-              android: AndroidNotificationDetails(
-                  'Visualizing Sleep',
-                  'Visualizing Sleep',
-                  icon: 'ic_bg_service_small',
-                  ongoing: true,
-              ),
+          888,
+          'Visualizing Sleep',
+          'Synchronized',
+          const NotificationDetails(
+            android: AndroidNotificationDetails(
+              'Visualizing Sleep',
+              'Visualizing Sleep',
+              icon: 'ic_bg_service_small',
+              ongoing: true,
             ),
+          ),
         );
       }
     }
@@ -166,9 +161,9 @@ Future authorize() async {
     }
   }
 }
+
 @pragma('vm:entry-point')
 Future fetchData(DateTime startDate, DateTime endDate) async {
-
   try {
     // fetch health data
     List<HealthDataPoint> healthData =
@@ -180,7 +175,6 @@ Future fetchData(DateTime startDate, DateTime endDate) async {
 
     // Upload the sleep data to Firebase
     await firebaseService.uploadSleepData(healthData);
-
   } catch (error) {
     print("Exception in getHealthDataFromTypes: $error");
   }
@@ -191,20 +185,17 @@ class HealthApp extends StatefulWidget {
 
   @override
   _HealthAppState createState() => _HealthAppState();
-
 }
 
 class _HealthAppState extends State<HealthApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Visualizing Sleep',
-        theme: ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.deepOrange,
-        ),
-        home: HomePage(),
+      ),
+      home: HomePage(),
     );
   }
 }
-
