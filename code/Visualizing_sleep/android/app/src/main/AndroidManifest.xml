@@ -1,5 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cachet.plugins.example_app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+
 
     <!-- Check whether Health Connect is installed or not -->
     <queries>
@@ -15,8 +16,10 @@
          FlutterApplication and put your custom class here. -->
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
     <uses-permission android:name="android.permission.health.READ_SLEEP"/>
-    <application android:label="visualizing_sleep"
+    <application
+        android:label="visualizing_sleep"
         android:icon="@mipmap/ic_launcher">
+
         <activity android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"

@@ -32,7 +32,7 @@ dependencies:
     sdk: flutter
   firebase_core: ^2.15.0
   firebase_auth: ^4.7.0
-  health: 7.0.1
+  health: ^8.0.0
   device_info_plus: ^9.0.2
   permission_handler: ^10.4.3
 
@@ -41,6 +41,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_database: ^10.2.4
   intl: ^0.18.1
+  firebase_messaging: ^14.6.5
+  flutter_background_service: ^5.0.1
+  flutter_background_service_android: 6.0.1
+  flutter_background_service_ios: 5.0.0
+  flutter_local_notifications: ^15.1.0+1
 
 dev_dependencies:
   flutter_test:

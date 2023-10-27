@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 
+@pragma('vm:entry-point')
 Future<String> getDeviceId() async {
   String deviceId = '';
   final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
