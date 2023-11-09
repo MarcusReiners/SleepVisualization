@@ -4,12 +4,12 @@
 #include <ArduinoJson.h>
 
 // Wi-Fi credentials
-const char* ssid = "MagentaWLAN-395D";
-const char* password = "57274849890517591979";
+const char* ssid = "Your_SSID";
+const char* password = "Your_Password";
 
 // Firebase credentials
-const char* firebaseApiKey = "AIzaSyB6Fc_ArXX5lmFJcUYDEnoX5drJcrpvChQ";
-const char* databaseUrl = "https://visualizing-sleep-default-rtdb.firebaseio.com/";
+const char* firebaseApiKey = "Your_Firebase_API_Key";
+const char* databaseUrl = "Your_Database_URL";
 
 // TFT display configuration
 TFT_eSPI tft;
@@ -18,12 +18,6 @@ TFT_eSPI tft;
 const int redPin = 12;    // Red LED pin
 const int greenPin = 13;  // Green LED pin
 const int bluePin = 14;   // Blue LED pin
-
-// Function prototypes
-void setup();
-void loop();
-void drawSleepStageBar(int displayWidth, int totalDuration, int displayHeight, int& yOffset, int duration, uint16_t color);
-void flameEffect(int redPin, int greenPin, int bluePin, int ledBrightness, int qualityVal);
 
 void setup() {
   Serial.begin(115200);
@@ -46,7 +40,7 @@ void loop() {
   Serial.println("Connected to WiFi!");
 
   // Fetch sleep stage data from Firebase
-  String url = String(databaseUrl) + "/AndroidSKQ1210908001/data.json?auth=" + firebaseApiKey;
+  String url = String(databaseUrl) + "Path_to_Sleep_Data" + firebaseApiKey;
 
   HTTPClient http;
   http.begin(url);
@@ -75,7 +69,12 @@ void loop() {
       int sleepEfficiency = sleepData["SleepEfficiency"].as<int>();
       int totalDuration = awakeDuration + deepSleepDuration + lightSleepDuration + remDuration;
       
-      int ledBrightness = map(totalDuration, 0, 480, 255, 0);  // Map duration to brightness
+      int difference = abs(totalDuration - 480);
+
+      int scaledDifference = map(difference, 0, 480, 0, 255);
+
+      int ledBrightness = 255 - scaledDifference;
+
       ledBrightness = constrain(ledBrightness, 0, 255);
 
       // Display settings
@@ -125,13 +124,6 @@ void loop() {
       float sleepQuality = v1 * sleepStagesDeviation + v2 * durationDeviation + v3 * awakeningsDeviation + v4 * efficiencyDeviation;
 
       sleepQuality = 100 - constrain(sleepQuality, 0, 100);
-
-      Serial.println(sleepStagesDeviation);
-      Serial.println(efficiencyDeviation);
-      Serial.println(awakeningsDeviation);
-      Serial.println(durationDeviation);
-      
-      Serial.println(sleepQuality);
 
       analogWrite(bluePin, 0);
 
