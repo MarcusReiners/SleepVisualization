@@ -41,8 +41,8 @@
   course={Medieninformatik},
   examiner={Prof.\ Dr.\ Sven Mayer},
   supervisor={Henrike Weing\"artner,\ M.Sc.\\Luke Haliburton,\ M.A.Sc.},
-  startdate={November 23, 2022},
-  enddate={March 23, 2022},
+  startdate={July 04, 2023},
+  enddate={November 21, 2023},
   % Falls keine Lizenz gewünscht wird bitte auf "none" setzen
   % Die Lizenz erlaubt es zu nichtkommerziellen Zwecken die Arbeit zu
   % vervielfältigen und Kopien zu machen. Dabei muss aber immer der Autor
@@ -94,13 +94,19 @@
 %auch im Stil vom Inhaltsverzeichnis
 \section*{Kurzfassung}
 
-<Short summary of the thesis>
+In der heutigen schnelllebigen und auf Produktivität ausgerichteten Welt wird es immer schwieriger, ausreichend Schlaf zu finden. Um hier Abhilfe zu schaffen, wurden Gesundheitstracker entwickelt, die einen detaillierten Einblick in die Schlafgewohnheiten der Nutzer geben und so Verbesserungen ermöglichen. Studien, die Gesundheitstracker bewerten, haben jedoch die Schwächen aktueller Geräte aufgezeigt, was die Notwendigkeit eines alternativen Ansatzes für bessere Ergebnisse unterstreicht.
+Um diesen Herausforderungen zu begegnen und eine neue Methode zu etablieren, haben wir ein physisches System entwickelt, das darauf abzielt, Menschen einen besseren Bezug zu ihren Schlafgewohnheiten zu geben. Dieses System nutzt Umgebungsvisualisierungen, um sich harmonisch in den Schlafbereich einzufügen und eine ruhige, entspannende Umgebung zu schaffen.
+Für die Entwicklung unseres Prototyps haben wir eine Online-Umfrage mit 156 Teilnehmern und eine Fokusgruppe mit 6 Teilnehmern durchgeführt. Basierend auf diesen Ergebnissen haben wir ein kerzenähnliches Gerät entwickelt, das die natürlichen Eigenschaften einer echten Kerze nachahmt und Schlafdaten über Merkmale wie Helligkeit oder Flackern der künstlichen Flamme übermittelt. Die würfelförmige Kerze besteht aus 4 Bildschirmen, die den Kerzenkörper bilden, und einer LED-Lampe an der Spitze, die die Flamme darstellt. Die Helligkeit der Kerze steht für die Schlafdauer, das Flackern für die allgemeine Schlafqualität und die Bildschirme zeigen eine Visualisierung der Schlafphasen.
+Im Vergleich zu herkömmlichen App-basierten Visualisierungen bietet unser Ansatz ein intuitiveres Verständnis der Schlafaufzeichnungen und lässt sich leicht in den Schlafbereich integrieren. Die Nutzer erhalten eine interaktive Darstellung ihrer Daten, die das Interesse am eigenen Schlafverhalten steigert und zu einem besseren Verständnis der Schlafgewohnheiten beiträgt, was wiederum die Motivation zur Verbesserung des Schlafverhaltens fördert.
 
 \cleardoublepage
 
 \section*{Abstract}
 
-<Short summary of the thesis>
+In today's fast-paced and productivity-focused world, it is becoming increasingly difficult to get enough sleep. To solve this, health trackers have been developed to provide a detailed insight into users' sleep habits, enabling improvements to be made. However, studies evaluating health trackers have highlighted the weaknesses of current devices, emphasizing the need for an alternative approach for better results.
+To address these challenges and establish a new method, we have developed a physical system that aims to give people a clearer reference to their sleep habits. This system uses ambient design principles to blend harmoniously into the sleeping area and create a calm, relaxing environment.
+To develop our prototype, we conducted an online survey with 156 participants and a focus group with 6 participants. Based on these results, we developed a candle-like device that mimics the natural characteristics of a real candle and transmits sleep data via features such as brightness or flickering of the artificial flame. The cube-shaped candle consists of 4 screens that form the body of the candle and a LED lamp at the top, that represents the flame. The brightness of the candle represents the duration of sleep, the flickering represents the general quality of sleep and the screens show a visualization of the sleep phases.
+Compared to traditional app-based visualizations, our approach offers a more intuitive understanding of sleep recordings and can be easily integrated into the sleep space. Users receive an interactive representation of their data, which increases interest in their own sleep behavior and contributes to a better understanding of sleep habits, which in turn promotes motivation to improve sleep behavior.
 
 \cleardoublepage
 
@@ -219,296 +225,514 @@
 
 Sleep is not merely a habit but an essential requirement for the survival of an organism, similar to the necessity of adequate air, food, and fluid intake. It plays a vital role in promoting overall well-being by exerting a significant influence on both our physical and mental health. Extensive scientific research has consistently underscored the crucial importance of obtaining enough sleep, and it should not be underestimated \cite{Define_Sleep_Health}.
 
- Consequently, a deficiency in obtaining sufficient and restorative sleep can serve as a catalyst for numerous diseases. This includes mental repercussions like mood swings and cognitive impairment, as well as more severe physical consequences, such as the development of cardiovascular diseases, obesity, compromised immune function, and subsequently, an elevated risk of mortality \cite{Mortality_short_sleep, consequences_sleep_deprivation}. However, the fast-paced nature of modern society, together with the ubiquitous influence of technology and especially smartphones, have given rise to a range of sleep-related challenges that impact individuals’ sleep patterns and quality \cite{problematic_smartphone_use}. Consequently, improving sleep health has emerged as a critical public health necessity, bringing innovative approaches that bring individuals the opportunity to monitor, understand, and enhance their sleep behaviors effectively.
+Consequently, a deficiency in obtaining sufficient and restorative sleep can serve as a catalyst for numerous diseases. This includes mental repercussions like mood swings and cognitive impairment, as well as more severe physical consequences, such as the development of cardiovascular diseases, obesity, compromised immune function, and subsequently, an elevated risk of mortality \cite{Mortality_short_sleep, consequences_sleep_deprivation}. However, the fast-paced nature of modern society, together with the ubiquitous influence of technology and especially smartphones, have given rise to a range of sleep-related challenges that impact individuals’ sleep patterns and quality \cite{problematic_smartphone_use}. Consequently, improving sleep health has emerged as a critical public health necessity, bringing innovative approaches that bring individuals the opportunity to monitor, understand, and enhance their sleep behaviors effectively.
 
 While various technological solutions, such as sleep tracking devices and applications, offer the promise of monitoring sleep, they often fall short in terms of motivating and engaging users to keep on tracking their sleep data. The abstract nature of the data presented by these tools can be challenging to interpret and act upon, impeding users' ability to make decisions based on their sleep data, to improve their sleep habits \cite{Sleep_essential_to_health}.
-Furthermore, these data representations are most of the time hard to access through the use of personal devices like smartphones and tablets, pushing users to actively engage in specific actions to unveil their data \cite{Ambient_visualization}. In a study by  Li et al. \cite{Stage_Based_Model} it was observed that individuals who were using sleep tracking devices frequently often didn't take the time to review their gathered data. Consequently, this lack of engagement hinders users from obtaining a comprehensive perspective of their sleep data, thus impeding their ability to use it for self-reflection and behavior improvements \cite{Stage_Based_Model}. 
+Furthermore, these data representations are most of the time hard to access through the use of personal devices like smartphones and tablets, pushing users to actively engage in specific actions to unveil their data \cite{Ambient_visualization}. In a study by Li et al., it was observed that individuals who frequently used sleep tracking devices often didn't take the time to review their gathered data. Consequently, this lack of engagement hinders users from obtaining a comprehensive perspective of their sleep data, thus impeding their ability to use it for self-reflection and behavior improvements \cite{Stage_Based_Model}.
 
 This study sets out to tackle the motivational gaps in sleep tracking through a physical representation of the gathered sleep data in an ambient way. This data physicalization involves the transformation of intangible sleep data into tangible and sensory representations, utilizing visual elements to enhance user engagement and comprehension \cite{Oppotunieites_Challenges_DataPhysicalization}. Previous research has indicated the potential effectiveness of using ambient information as a tool to minimize the level of attention required for the system interaction and to encourage user engagement \cite{Fostering_Engagement, Econundrum, Roam-IO}.
 Therefore, the approach of an ambient visualization of data can help the integration of sleep data into the daily routine, making it an effortless component of everyday life.
 
 While this technique has been previously employed in various domains, such as visualizing activity data \cite{LOOP, Shelfie, 10_Design_Themes, TastyBeats, Activity_Scupltures}, its application to the field of sleep health remains largely unknown. This research aims to explore the potential of data physicalization within the realm of sleep wellness, with a focus on bridging the gap between raw sleep data and user engagement. By delving into physical data representations, the study seeks to motivate individuals to take proactive steps towards better sleep health.
 
-This research is organized in three main phases: initially, gathering user insights through an online survey to discern preferences and expectations, leading into a focus group to gather detailed expectations towards the object by individuals; subsequently, developing a prototype that harnesses ambient information to motivate and guide users on their path to improved sleep wellness.
+This research is organized into three main phases: initially, user insights are gathered through an online survey to discern preferences and expectations; this is followed by a focus group aimed at collecting detailed expectations from individuals regarding the object; subsequently, developing a prototype that harnesses ambient information to motivate and guide users on their path to improved sleep wellness.
 
-Since a tendency towards a calming, relaxing and atmospheric design for a prototype emerged from the survey, we decided to use a candle as a form of data physicalization. Candles have been used frequently in studies in the past as a form of relaxation \cite{Candle_as_relaxation, Candle_reduce_stress} and are generally considered a calming and atmospheric illuminant. The features of this candle are used to display a total of three different sleep tracking records. An LED lamp is used to recreate the flame of the candle, which displays the overall sleep quality by flickering, and the sleep duration by brightness. The body of the candle consists of four displays, which show the sleep phases of the last night by colored bars. In order to also be able to collect this sleep data, in addition to an ordinary smartwatch, an app is used which consistently reads the collected data from the watch and stores it in a cloud, where the data is then loaded and read from there by the prototype.
+Since a tendency towards a calming, relaxing and atmospheric design for a prototype emerged from the survey, we decided to use a candle as a form of data physicalization. Candles have been used frequently in studies in the past as a form of relaxation \cite{Candle_as_relaxation, Candle_reduce_stress} and are generally considered a calming and atmospheric illuminant. To effectively collect sleep data, an app is used in addition to an ordinary health tracker. This app consistently reads the collected data from the watch and stores it in a cloud, from where the data is then loaded and read by the prototype.
 
 The results of this study show initial attempts for the potential of data physicalization to make the representation of sleep data more approachable and less cumbersome. Thus, not only can the field of data visualization be expanded, but also the way people perceive, interact with, and prioritize their sleep health accordingly. By combining data, design, and user experience, this study is expected to pave the way for future studies with creative solutions that allow individuals to make informed decisions regarding their sleep behaviors. These findings could represent a new step towards understanding sleep behavior and, along with further research in the future, could change the perspective of various aspects of health and wellness behavior in today's society.
-
-%This is a typical human-computer interaction thesis structure for an introduction which is structured in four paragraphs as follows:
-% First Paragraph
-% CORE MESSAGE OF THIS PARAGRAPH:
-%\todo{P1.1. What is the large scope of the problem?}
-%-Sleep-related issues and their impact on overall well-being
-%\newline
-%-Lack of effective motivational tools for individuals to monitor and improve their sleep
-%\todo{P1.2. What is the specific problem?}
-%-The limited exploration of Sleep Data-Physicalization
-% Second Paragraph
-% CORE MESSAGE OF THIS PARAGRAPH:
-%\todo{P2.1. The second paragraph should be about what have others been doing}
-%-Data Physicalization of Activity-Data
-%\todo{P2.2. Why is the problem important? Why was this work carried out?}
-%-Sleep health is a significant concern in modern society
-%\newline
-%-Lack of tools to engage and motivate individuals in prioritizing their sleep
-% Third Paragraph
-% CORE MESSAGE OF THIS PARAGRAPH:
-%\todo{P3.1. What have you done?}
-%-conducted two online surveys to find a desired Design approach
-%\newline
-%-Develop and test a Prototype
-%\todo{P3.2. What is new about your work?}
-%-Exploration of data physicalization as a means to engage and motivate users in their sleep wellness
-% Fourth paragraph
-% CORE MESSAGE OF THIS PARAGRAPH:
-%\todo{P4.1. What did you find out? What are the concrete results?}
-%\todo{P4.2. What are the implications? What does this mean for the bigger picture?}
 
 %LaTeX hints are provided in \autoref{chap:latexhints}.
 
 \chapter{Related Work}
 
 This chapter provides an overview of the literature on the importance of sleep, sleep tracking and visualization techniques, and how data physicalization can be used as a motivational tool.
-Sleep is an important component of human well-being, and understanding and improving sleep quality is of great interest in both medical and personal contexts. This section reviews the existing literature on health data visualisation and the use of data physicalisation as a motivational tool.
+Sleep is an important component of human well-being, and understanding and improving sleep quality is of great interest in both medical and personal contexts. This section reviews the existing literature on health data visualization and the use of data radicalization as a motivational tool.
 
 \section{Importance of Sleep}
 
 Sleep, as one of the fundamental pillars of a healthy life, has gained substantial attention in both medical and personal contexts. Traditionally centered on addressing sleep disorders and insufficient sleep duration, the concept of sleep health now encompasses the whole well-being of individuals or entire populations \cite{Define_Sleep_Health}. Its significance as a foundation of health underscores the need to comprehensively understand and improve sleep quality.
 
 \paragraph{Brain Functioning}
-Sleep is essential for various physiological functions, particularly impacting the brain by playing a role across a variety of these functions \cite{tai_impact_2022}. A collection of articles elucidates the dynamic nature of sleep, its evolution across the lifespan, and its role in memory consolidation and integration \cite{simon_functions_2022}. Sleep re-energizes the body’s cells, clears waste from the brain, and supports learning and memory, although more research is needed to fully understand its role in mood, appetite, and libido regulation \cite{cirelli_sleeping_2017}. Emerging evidence suggests that a crucial function of the sleeping brain is the removal of wastes and toxins from the central nervous system due to the activation of the brain waste removal system \cite{semyachkina-glushkovskaya_brain_2023}. During non-rapid eye movement (REM) sleep, neural activity coupled with changes in blood volume enables cerebrospinal fluid to flow in slow waves; this process may help clear toxins from the brain that have been linked to neurodegenerative diseases \cite{lehmann_slow_2019}.
+Sleep is essential for various physiological functions, particularly impacting the brain by playing a role across a variety of these functions \cite{tai_impact_2022}. A collection of articles clarifies the dynamic nature of sleep, its evolution across the lifespan, and its role in memory consolidation and integration \cite{simon_functions_2022}. Sleep re-energizes the body’s cells, clears waste from the brain, and supports learning and memory. Although more research is necessary to fully understand its role in mood, appetite, and libido regulation \cite{cirelli_sleeping_2017}. Emerging evidence suggests that a crucial function of the sleeping brain is the removal of wastes and toxins from the central nervous system \cite{semyachkina-glushkovskaya_brain_2023}. During non-rapid eye movement (REM) sleep, neural activity coupled with changes in blood volume enables cerebrospinal fluid to flow in slow waves; this process may help clear toxins from the brain that have been linked to neurodegenerative diseases \cite{lehmann_slow_2019}.
 
 \paragraph{Growth and Repair}
-Sleep is vital for cellular, organic, and systemic functions of an organism, affecting various physiological processes including hormonal axes \cite{dattilo_sleep_2011}. The function of sleep for repair or clearance becomes more pronounced during late ontogeny (after 2 or 3 years in humans) as shown by a quantitative analysis \cite{cao_unraveling_2020}. Sleep plays a role in neural reorganization and growth, significantly impacting the brain's structure and function, especially in infants and children \cite{brinkman_physiology_2023}.
+Sleep is vital for cellular, organic, and systemic functions of an organism, affecting various physiological processes including hormonal axes \cite{dattilo_sleep_2011}. Sleep plays a role in neural reorganization and growth, significantly impacting the brain's structure and function, especially in infants and children \cite{brinkman_physiology_2023}.
+The function of sleep for repair or clearance becomes more pronounced during late ontogeny (after 2 or 3 years in humans) as shown by a quantitative analysis \cite{cao_unraveling_2020}.
+\paragraph{Consequences of Sleep Deprivation.}
+Insufficient sleep duration and quality are linked to a range of adverse health effects. Sleep deprivation is associated with increased mortality, particularly in men, due to changes in endocrine and metabolic functions \cite{yin_relationship_2017}. Weight management is also greatly impacted, often leading to weight gain and obesity \cite{papatriantafyllou_sleep_2022}. Cardiovascular health risks, such as hypertension and coronary heart disease, are elevated due to insufficient sleep \cite{belloir_sleep_2022}. Furthermore, cognitive and motor impairments resulting from sleep deprivation increase the likelihood of accidents, notably drowsy driving, which is a significant contributor to traffic accidents \cite{williamson2011link}.
 
-\subsection{Consequences of Sleep Deprivation.}
-Insufficient sleep duration and low sleep quality come together with a number of adverse health effects. The adverse effects of insufficient sleep duration, sleep apnoea and insomnia on various aspects of health such as mortality, weight loss, diabetes, inflammation, cardiovascular health, cognitive function and psychological well-being have been extensively described in the literature \cite{Sleep_Health_Society}.
+\section{Understanding Sleep}
+Sleep is broadly divided into two main phases: Rapid Eye Movement (REM) and Non-Rapid Eye Movement (NREM) sleep. The latter is further subdivided into three stages, labeled N1-N3. Each of these phases and stages is characterized by distinctive patterns in muscle tone, brain wave activity, and eye movements \cite{patel_physiology_2023}.
 
-\paragraph{Mortality}
-Sleep deprivation has been associated with increased all-cause mortality, particularly in men. Several mechanisms have been suggested to explain this association. For instance, sleep restriction during the night can alter endocrine and metabolic function, which may in turn be implicated with mortality or cardiovascular events \cite{yin_relationship_2017}. Laboratory data support a link between short sleep duration and physiological and social outcomes which could relate to mortality \cite{grandner_mortality_2010}.
+Sleep is categorized into five stages: wakefulness, N1, N2, N3, and REM sleep. Around 75\% of sleep time is dedicated to these NREM stages, with the predominant portion occurring in the N2 stage \cite{malik_sleep-wake_2018}. During a usual night, an individual undergoes 4 to 5 sleep cycles. These cycles follow a specific order of stages: starting with N1, progressing to N2, then N3, back to N2, and finally reaching the REM stage. Each complete cycle spans approximately 90 to 110 minutes. The initial REM phase is typically brief, and as the night advances, the duration of REM sleep extends, while the time spent in deep sleep decreases \cite{feinberg_systematic_1979}.
 
-\paragraph{Weight Loss}
-Sleep deprivation can significantly affect weight loss efforts and maintenance. It has been found to alter eating habits, metabolic rate, and the hormones regulating metabolism, which are all crucial factors for weight management \cite{papatriantafyllou_sleep_2022}. Moreover, sleep deprivation is associated with weight gain and obesity as it can increase appetite, reduce feelings of fullness after eating, and make individuals more likely to reach for junk foods \cite{chamorro_sleep_2011}.
+In the wake stage, alertness varies depending on whether the eyes are open or closed, with noticeable changes in brain activity when transitioning from alertness to drowsiness. Stage N1, the lightest sleep stage, accounts for about 5\% of sleep time. It begins when there's a shift from wakefulness to sleep and features regular breathing and some muscle tone \cite{malik_sleep-wake_2018}. Stage N2, representing a deeper level of sleep, makes up roughly 45\% of sleep. This stage is important for memory consolidation and is when heart rate and body temperature decrease. It's also the stage where sleep-related phenomena like bruxism (teeth grinding) occur \cite{antony_sleep_2019}. The deepest stage of Non-REM sleep, stage N3, comprises 25\% of sleep. This stage is essential for physical restoration and is difficult to be awakened from. Common occurrences in this stage include sleepwalking and night terrors \cite{hilditch_sleep_2019}. Lastly, the REM stage, also 25\% of sleep, is associated with dreaming. It's characterized by significant muscle relaxation, except for the eyes and breathing muscles, and an erratic breathing pattern. The duration of REM periods increases throughout the night \cite{della_monica_rapid_2018}.
 
-\paragraph{Cardiovascular Health}
-Sleep deprivation is associated with an elevated risk of cardiovascular issues, such as hypertension and coronary heart disease. Insufficient sleep, marked by less than 7 hours per night, tends to exacerbate existing cardiovascular conditions. The underlying mechanisms include endothelial dysfunction and disrupted signaling pathways leading to cardiac incidents \cite{belloir_sleep_2022}
-
-\paragraph{Cognitive Functions (Accidents)}
-The consequences of sleep deprivation have a detrimental impact on neurobehavioral functioning \cite{durmer2005neurocognitive,lim2008sleep,lim2010meta} and result in heightened daytime fatigue and drowsiness, increasing the likelihood of accidents stemming from human errors \cite{axelsson2008sleepiness, dinges1995overview}. Sleep deprivation leads to cognitive and motor performance impairments comparable to those induced by alcohol consumption at or above the legal limit \cite{williamson2011link}. Drowsy driving incidents are widespread, with 32\% of participants in the 2008 National Sleep Foundation Sleep in American Poll admitting to having driven while drowsy, and 36\% acknowledging brief episodes of nodding off while driving in the past year. Drowsy driving significantly contributes to a notable portion of traffic accidents, accounting for up to 20\% of cases \cite{williamson2000moderate}. Beyond the elevated risk of motor vehicle collisions, sleep deprivation and the resultant drowsiness are associated with occupational injuries and fatal accidents \cite{connor2001role, aakerstedt2002prospective}. These severe consequences underscore the irreplaceable necessity of sleep and its pivotal role in society at large.
 
 \section{Sleep Tracking and Visualizations}
-The public availability of sleep tracking technologies has introduced new opportunities for individuals to monitor their sleep well-being \cite{Challenges_Oppotunieties_SleepTracking}. Originally conceived for scientific research, these technologies now give users the opportunity to gain insights into their sleep patterns and habits.
+The public availability of sleep tracking technologies has introduced new opportunities for individuals to monitor their sleep well-being. Originally conceived for scientific research, these technologies now give users the opportunity to gain insights into their sleep patterns and habits \cite{Challenges_Oppotunieties_SleepTracking}.
 \paragraph{Sleep Tracking Technologies}
-Sleep tracking technologies have gained considerable interest in recent years as valuable tools for monitoring and assessing sleep patterns. These technologies utilize various sensors and devices to collect data on an individual's sleep duration, sleep stages, movement, and environmental factors. Consumer-oriented devices like a wearable fitness tracker or a smartphone app have the potential to enhance overall sleep well-being, by measuring the sleep duration, giving a rating of the overall sleep quality, and waking the user during light sleep phases \cite{Consumer_SleepTracking}. However, the question of whether these technologies can truly improve sleep remains subtle.
+Sleep tracking technologies have gained considerable interest in recent years as valuable tools for monitoring and assessing sleep patterns. These technologies utilize various sensors and devices to collect data on an individual's sleep duration, sleep stages, movement, and environmental factors. Consumer-oriented devices like a wearable health tracker or a smartphone app have the potential to enhance overall sleep well-being, by measuring the sleep duration, giving a rating of the overall sleep quality, and waking the user during light sleep phases \cite{Consumer_SleepTracking}.
 
-\paragraph{Impact of Sleep Tracking.}
-
-The study "Smartphone applications for sleep tracking: rating and perceptions about behavioral change among users" found that 30-50\% of participants believed sleep tracking apps increased awareness about sleep patterns and hygiene, influenced sleep hygiene habits, and encouraged help-seeking when needed. However, it also noted the need for improved quality and content in these apps, as the average app quality score was 3.3 out of 5 \cite{karasneh_smartphone_2022}. Sleep tracking predominantly enhances awareness of sleep patterns. However, it's unclear if this awareness translates to sleep improvement due to barriers like a lack of reference points for data interpretation, inaccuracies in sleep data, and a lack of motivational elements within the tracking systems to encourage actionable steps towards better sleep hygiene \cite{SleepTracking_in_the_real_world}.
+\paragraph{Impact of Sleep Tracking}
+A study found that 30-50\% of participants believed sleep tracking apps increased awareness about sleep patterns and hygiene, influenced sleep  habits, and encouraged seeking help when needed. However, it also noted the need for improved quality and content in these apps, as the average app quality score was 3.3 out of 5 \cite{karasneh_smartphone_2022}. Sleep tracking predominantly enhances awareness of sleep patterns. It's unclear if this awareness translates to sleep improvement due to barriers like a lack of reference points for data interpretation, inaccuracies in sleep data, and a lack of motivational elements within the tracking systems to encourage actionable steps towards better sleep hygiene \cite{SleepTracking_in_the_real_world}.
 
 \paragraph{Sleep Visualization Techniques}
-Visualizing sleep data is essential for understanding sleep patterns . Consumer sleep tracking devices lack standardization and often use proprietary algorithms, relying on built-in accelerometers to define sleep parameters \cite{SleepTracking_ClnicalCare, lee_consumer_review2015}. These devices offer the advantage of measuring sleep quality in natural environments \cite{Making_sense_of_sensors}. User adherence to tracking, or how regularly data is collected, can affect perceived accuracy \cite{Defining_Adherence}. However, user perception of accuracy is not always based on technical validation.
+Visualizing sleep data is essential for understanding sleep patterns. Consumer sleep tracking devices lack standardization and often use their own algorithms, relying on built-in accelerometers to define sleep parameters \cite{SleepTracking_ClnicalCare, lee_consumer_review2015}. These devices offer the advantage of measuring sleep quality in natural environments \cite{Making_sense_of_sensors}. User adherence to tracking, or how regularly data is collected, can affect perceived accuracy \cite{Defining_Adherence}. However, user perception of accuracy is not always based on technical validation.
 Users have concerns about data trustworthiness, including variations between devices and doubts about sleep recognition \cite{Challenges_Oppotunieties_SleepTracking}. Subjective perceptions of sleep quality, such as how much sleep is enough to feel rested, can lead to a discomfort between metrics and user experience \cite{sleepexplorer}. Lack of trust in captured data reduces user acceptance \cite{Trust_activity_tracker} and may challenge long-term device adoption \cite{sleepexplorer}. Unrealistic expectations about device capabilities can also affect the perception accuracy \cite{Use_and_Adoption}.
-Some users may not change their sleep habits despite tracking data due to a lack of understanding of normal sleep and uncertainty about improvement \cite{SleepTracking_in_the_real_world}. Liang et al. suggest design considerations related to data accuracy, visualization, guidance, and personalized recommendations to address these issues \cite{SleepTracking_in_the_real_world}.
+Some users may not change their sleep habits despite tracking data due to a lack of understanding of normal sleep and an uncertainty about improvement. Liang et al. suggest design considerations related to data accuracy, visualization, guidance, and personalized recommendations to address these issues \cite{SleepTracking_in_the_real_world}.
 
-\section{Data Physicalization as a Motivational Tool}
-A data physicalization is a physical artifact whose geometry or material properties encode data. Physicalization is an innovative approach to visualizing data using tangible, three-dimensional models. The original definition, proposed by Jansen et al., emphasized that only the physical characteristics of the artifact hold the encoded data \cite{Oppotunieites_Challenges_DataPhysicalization}. However, Hogan and Hornecker expanded this definiton by asserting that data can also be encoded not only in the shape but also in the behavior of the physical representation \cite{Representation_Modality_Data_Artifacts}.
-Dynamic physicalization involves interactive and responsive visualizations using tangible models. Users can manipulate the physical objects to explore specific data points or regions of interest while observing real-time changes \cite{Oppotunieites_Challenges_DataPhysicalization}. This broader perspective of data physicalization highlights the significance of considering the object's materiality and its quality of presence in the world, a concept well-studied in design research \cite{Structures_Forms_Stuff_Interaction, Materiality_of_interaction}. It acknowledges that data physicalization goes beyond mere representation and encompasses a holistic view. Furthermore, Offenhuber's perspective challenges the conventional notion of data by emphasizing that data physicalization can extend beyond external datasets \cite{Talk_About_Physicality}.
-\paragraph{Ambient Information}
+\section{Data Physicalization}
+A data physicalization is a physical artifact whose geometry or material properties encode data. Physicalization is an innovative approach to visualizing data using tangible, three-dimensional models. The original definition, proposed by Jansen et al., emphasized that only the physical characteristics of the artifact hold the encoded data \cite{Oppotunieites_Challenges_DataPhysicalization}. However, Hogan and Hornecker expanded this definition by asserting that data can also be encoded not only in the shape but also in the behavior of the physical representation \cite{Representation_Modality_Data_Artifacts}.
+Dynamic physicalization involves interactive and responsive visualizations using tangible models. Users can manipulate the physical objects to explore specific data points or regions of interest while observing real-time changes \cite{Oppotunieites_Challenges_DataPhysicalization}. This broader perspective of data physicalization highlights the significance of considering the object's texture and its quality of presence in the world, which is a concept well-studied in design research \cite{Structures_Forms_Stuff_Interaction, Materiality_of_interaction}. Furthermore, Offenhuber's perspective challenges the conventional notion of data by emphasizing that data physicalization can extend beyond external datasets \cite{Talk_About_Physicality}.
+\paragraph{Narrative Physicalization}
+Narrative Physicalization is an innovative approach to data interaction that merges personal data with everyday objects, fostering an immersive and reflective engagement with data. This concept goes beyond traditional data visualization by incorporating elements of storytelling and physical interaction with data-embedded objects. It borrows from narrative visualization and engagement with everyday artifacts to support nuanced self-reflection through embodied engagement with personal data. The applications of Narrative Physicalization are diverse, ranging from health and wellness to environmental data interpretation and beyond. The way it adapts to various data types and contexts makes it a versatile tool for engaging individuals with their personal data, be it for educational, motivational, or awareness-raising purposes \cite{9200790}.
+\paragraph{Participatory Data Physicalization}
+Participatory Data Physicalization (PDP) extends the idea of Narrative Physicalization by incorporating a participatory element. Here, individuals are directly involved in the process of collecting, constructing, and interpreting their data. This involvement enhances the personal relevance and impact of the data physicalization process. PDP opens avenues for collaborative exploration and learning. It creates opportunities for groups to engage in data physicalization activities, fostering a collective understanding and dialogue around shared data sets. This collaborative approach is particularly beneficial in educational and community settings, where collective data interpretation can lead to shared insights and actions \cite{10.1145/3173574.3173728}.
+\section{Ambient Information}
 Ambient information systems, requiring minimal attention and cognitive effort, have been designed to motivate individuals towards healthier behaviors like regular exercise. These systems employ strategies like abstraction, historical information reflection, and triggers to motivate users towards desired actions \cite{rodriguez_cammina_2013}. For instance, in a work environment, an ambient information system was developed using a sensor-actuator system, to provide a responsive office setting, which was evaluated by experimental participants for its impact \cite{streitz_ambient_2023}. Similarly, ambient mirrors have been used to reflect a user's current behavior or attitude, supporting behavior change through personalized feedback, with one case study showcasing the reflection of a user's physical exercise status in artistic images \cite{nakajima_designing_2013}.
 These examples underline the potential of integrating ambient information systems in sleep wellness programs to motivate individuals towards better sleep hygiene and overall sleep quality improvement.
 
-\section{Summary}
-This section has provided an overview of the existing literature related to sleep health, sleep tracking technologies, visualization techniques, and the emerging field of data physicalization. The subsequent sections will build upon those insights to explore the integration of data physicalization as a motivational tool within the context of sleep wellness.
+Zachary Pousman and John Stasko \cite{taxonomy} explore the design space of ambient information systems. They present four critical design dimensions that designers must consider: information capacity, notification level, representational fidelity, and aesthetic emphasis. These dimensions represent key decisions in system design, ranging from the amount and type of information displayed to the aesthetic appeal of the system. The study categorizes 19 research systems and 3 consumer systems along these dimensions, drawing on published materials to inform its analysis.
+\paragraph{Information Capacity}
+Ambient information systems aim to uncritically enhance the well-being and awareness of the user. Their information capacity varies, as indicated by the number of discrete data elements they can display. This capacity ranges from single data displays to systems displaying 20 or more elements. Systems are ranked from "low" to "high" based on this capacity, with physical displays generally ranked lower due to limited flexibility. In contrast, systems using LCD displays, especially full-screen displays, rank higher.
+\paragraph{Notification Level}
+Notification levels in ambient information systems reflect how much they intend to interrupt a user, ranging from subtle to demanding. The core of ambient design lies in unobtrusive, change-blind, or awareness notifications. Those that require attention, such as alarms or system dialogues, deviate from ambient principles. Most ambient systems use low to medium levels of notification, focusing on subtle changes, with physical displays generally avoiding high-level alerts.
+\paragraph{Representation Fidelity}
+Representational fidelity in ambient information systems refers to how world data is encoded into various forms such as patterns, images, or sounds. This concept involves three elements: the signified (the object or idea), the signifier (its representation), and the sense (the observer's understanding). Ambient systems use signs in various forms: symbolic (arbitrary, like language characters), iconic (resembling the object), and indexical (directly related, like maps). Most systems have a single level of fidelity, but some have multiple levels, from indexical to symbolic, demonstrating their representational flexibility.
+\paragraph{Aesthetic Emphasis}
+The final dimension of ambient information systems is the emphasis on aesthetics, the balance between artistic appeal and information communication. Designers approach this differently, with some focusing on artistic values and others prioritizing information delivery. The emphasis on aesthetics is subjective and varies from low to high across systems. For example, systems like Apple's Dashboard widgets emphasize clean design but not as art objects, while others like Kandinsky and Informative Art reflect specific artistic styles. The balance between aesthetic appeal and information capacity is a key design consideration, with some systems deliberately designed to be artistic.
 
+\section{Summary}
+This section has provided an overview of the existing literature related to sleep health, sleep tracking technologies, visualization techniques, and the emerging field of data physicalization. The subsequent sections will build upon those insights to explore the integration of data physicalization within the context of sleep wellness.
 
 \chapter{Methodology}
-
-This chapter provides an overview of the research methods used in this thesis. The research process consists of three phases, each of which contributes to the overall investigation. Previous research on the use of data physicalisation as a motivational tool shows a clear gap regarding the application and implementation of ambient designs to make captured sleep data more accessible to users.
-There are already approaches in data recording through fitness trackers, such as the display of daily step count \cite{LOOP}. However, despite the serious implications of insufficient sleep quality and duration \cite{Sleep_Health_Society}, the implementation of data physicalization in the context of sleep data remains largely unexplored. With this in mind, we wanted to make sleep more tangible, increase users' awareness of their sleep patterns and well-being, and motivate them to adopt healthier habits.
+This chapter provides an overview of the research methods used in this thesis. The research process consists of three phases, each of which contributes to the overall investigation. Previous research on the use of data physicalization as a motivational tool shows a clear gap regarding the application and implementation of ambient designs to make captured sleep data more accessible to users.
+There are already approaches in data recording through health trackers, such as the display of daily step count \cite{LOOP}. However, despite the serious implications of insufficient sleep quality and duration \cite{Sleep_Health_Society}, the implementation of data physicalization in the context of sleep data remains largely unexplored. With this in mind, we wanted to make sleep more tangible, increase users' awareness of their sleep patterns and well-being, and motivate them to adopt healthier habits.
 
 Before proceeding with the selection of a research methodology, we formulated three research questions to ensure alignment with the objectives of our project:
 
 \begin{itemize}
-    \item \textbf{RQ1:} What categories of sleep data are relevant for effective visualisation and understanding to promote sleep wellness?
-    \item \textbf{RQ2:} What design principles and elements should be incorporated into a prototype to effectively communicate sleep data to users?
-    \item \textbf{RQ3:} What data communication methods should the prototype use to ensure accurate and understandable transmission of sleep data to users?
+    \item \textbf{RQ1:} What categories of sleep data are relevant for effective visualization and understanding?
+    \item \textbf{RQ2:} How should a physical prototype that communicates sleep data look?
+    \item \textbf{RQ3:} How should a physical prototype communicate sleep data?
 \end{itemize}
 
-Since everyone needs enough sleep to survive, we wanted to collect results from an unrestricted target group. Therefore, in order to make our findings more widely applicable, we decided to conduct a quantitative survey, formulating questions based on the relevant research. The aim was to gain a deeper understanding of the relevant requirements in relation to the articulated research questions that would guide the prototyping process. After analyzing the survey results, we were able to make first design decisions for our tangible artifact. However, as the survey could not provide precise ideas, but only a rough theme, a focus group was then held to collect explicit design ideas from a diverse group and to inspire the design decisions of the prototype. These provided a framework for determining the mechanisms and aesthetics of the tangible object. We then started working on the prototype, including both software and hardware, and held weekly meetings to evaluate design choices and iteratively refine the system. The final step in achieving our project goal was to build the hardware of the prototype and make it tangible.
-
-\subsection{Survey Phase:} 
-The research began with a preliminary study on sleep tracking and sleeping habits. It also already served to gather initial ideas for a potential prototype design. In this first step, data from over 150 participants, without any restrictions, were collected and analyzed.
-
-\subsection{Focus Group Phase}
-Following the survey phase, a focus group was conducted, in order to build upon the gathered data from the online survey and also to have a few hands-on examples for a potential prototype. The focus group yielded valuable results for the research process, consolidating some of the findings from the online survey.
-
-%this section is an overview of %the entire thesis
-%- first doing survey
-%- then focus group
-%- then implementation
-%- then evaluation
-
-%this section only needs to be %like 0.5-1 page
+Since everyone needs enough sleep to survive, we wanted to collect results from an unrestricted target group. Therefore, in order to make our findings more widely applicable, we decided to conduct a quantitative survey, formulating questions based on the relevant research. The aim was to gain a deeper understanding of the relevant requirements in relation to the articulated research questions that would guide the prototyping process. After analyzing the survey results, we were able to make first design decisions for our tangible artifact. However, as the survey could not provide precise ideas, but only a rough theme, a focus group was then held to collect explicit design ideas from a diverse group and to inspire the design decisions of the prototype. These provided a framework for determining the mechanisms and aesthetics of the tangible object. We then started working on the prototype, including both software and hardware, and held weekly meetings to evaluate design choices and iteratively refine the system. The final step in achieving our project's goal was to build the hardware of the prototype and make it tangible.
 
 \chapter{Online Survey}
+We conducted a quantitative survey to investigate the sleep tracking experience and sleep health of users, with the aim of creating a prototype tailored to their needs. The survey provided insights into the sleep habits of these users and allowed us to determine basic specifications such as the feedback system and dimensions of the prototype. In the following, I will give an overview of the survey design and questions, present the survey results, and analyze the findings to identify the requirements for the prototype.
+
 \section{Method}
-\subsubsection{Participants}
-A total of 156 participants, mostly recruited via an e-mail distributor, attended for this study. The participants' demographics revealed a range of ages, with an average age of 28.53 years. The gender distribution was as follows: 86 female, 55 male, 4 preferred not to say, 3 identified as non-binary, and 2 with other gender identities.
-\subsubsection{Survey Content}
-During the online survey, participants were initially asked in detail about their sleep habits or any existing sleep disorders. Based on this, the previous use of sleep tracker devices was explored in more detail by asking, among other things, the actual frequency of use and the improvements in sleep habits that occurred or did not occur as a result. The main part of the study was to gather participants' ideas and perceptions for a potential prototype that would present collected sleep data as a data physicalization.
+Initially, we had to choose a method for distributing the survey that would determine the available tools. Since the only requirement for participants was their sleep habits and optional experience with a sleep tracker, we concluded that an online survey would not cause any difficulties for them, facilitating its distribution across multiple channels.
+
+Afterwards, we focused on composing the questionnaire, taking cues from previous research. The survey covered various aspects such as demographic information, sleep routines, monitoring sleep, design of the objects, features of the objects, and lastly, physical attributes of the objects.
+
+\subsection{Demographics}
+To obtain demographic data and better understanding of participants' responses, we asked about their age, gender, and technological interest. Given that our project focused on sleep habits, the sole requirement for participants was to have a sleeping habit, making any further constraints unnecessary. This approach ensured that our dataset encompassed a diverse group of individuals, allowing us to formulate more insights from our analysis.
+
+\subsection{Sleep Health}
+The study of sleep health is critical to understanding individual well-being. This study uses specific questions and the SATED questionnaire in an online survey to collect nuanced data on sleep patterns and quality, aiding in the effective visualization and interpretation of sleep data through a data physicalization prototype.
+
+The questions focus on identifying clinically significant factors affecting sleep, such as disorders and conditions, and how external elements like noise, temperature, and stress influence sleep quality. It also gathers data on average sleep duration and subjective sleep quality ratings. This comprehensive data collection is crucial for developing a prototype that effectively represents and visualizes sleep data, enhancing understanding of sleep routines and habits.
+
+\paragraph{SATED Questionnaire}
+The SATED questionnaire is an instrument verified by sleep researchers, acknowledged for its dependability and accuracy in determining sleep health in the general public \cite{benitez_validation_2020}. Consisting of five questions, each with a scoring system of Rarely/Never (0), Sometimes (1), and Always (2), the questionnaire produces a score between 0 and 10, revealing the overall quality of sleep. It assesses various aspects of sleep health, including satisfaction with sleep, alertness during the day, timing of sleep, efficiency of sleep, and sleep duration, thus offering a thorough evaluation of sleep health \cite{Define_Sleep_Health}.
+
+The main purpose of using the SATED questionnaire alongside the direct questions is to provide a comparative analysis. The score from the SATED questionnaire provides a structured assessment of sleep quality that can be compared with the participant's own perception of their sleep quality by the direct sleep quality assessment question. This comparative analysis aims to identify any discrepancies between subjective self-report and the structured assessment provided by the SATED questionnaire, providing invaluable insight into the accuracy of self-reported sleep quality. Such insights are fundamental to determine how effective the data physicalization prototype can bridge any perceptual gaps, making sleep data more accessible and actionable for individuals.
+\subsection{Sleep Tracking}
+This survey explores participants' experiences with sleep tracking, with the aim of uncovering behaviors, preferences and barriers associated with this technology. Responses are segmented based on the initial interaction with sleep tracking, allowing for nuanced analysis relevant to data physicalization efforts.
+\paragraph{Initial Engagement with Sleep Tracking}
+The first question "Have you ever used a health tracker (e.g. Fitbit) to track your sleep?" directs participants into three distinct pathways: ongoing use, discontinued use, and non-use of sleep trackers. This branching facilitates an in-depth understanding of different experiences with sleep tracking technology.
+\begin{itemize}
+    \item \textbf{Ongoing Users:} The questions aim to examine how sleep tracking affects participants' sleep patterns, the frequency of usage, and any obstacles they may encounter. Notably, the inquiry regarding tracking frequency, especially when less than five nights per week are selected, uncovers potential barriers to consistent usage.
+    \item \textbf{Discontinued Users:} This pathway explores the factors that led to discontinuation of sleep tracking, the effects of use, and the frequency of use. In line with current users, the research seeks to understand any barriers to more frequent use if less than 5 nights per week were tracked.
+    \item \textbf{Non-Users:} For participants who have no prior experience with sleep tracking, the questionnaire aims to assess their willingness to use tracking devices and any potential concerns they may have.
+\end{itemize}
+\paragraph{Data Sharing Perspective}
+Sharing sleep data suggests a collective approach to managing sleep health across multiple dimensions. Understanding the different tendencies to share data at different levels of engagement with sleep tracking is critical for incorporating collaborative features into the data physicalization prototype.
+
+\subsection{Object Design}
+This section of the survey aims to uncover participants' associations with sleep via two open-ended questions, in order to provide an unbiased platform for expression.
+\paragraph{Conceptual Associations with Sleep}
+The question, "What thing(s)/concept(s) do you associate most with sleeping?" encourages participants to explore their cognitive associations with the act of sleeping. The answers to this query aim to provide insight into the abstract or thematic elements commonly linked to the act of sleeping. With this insight, the thematic design of the physical data prototype could be influenced, guaranteeing an intuitive and relatable interface.
+\paragraph{Physical Object Associations with Sleep}
+Similarly, the question "What physical object(s) do you associate most with sleeping?" focuses attention on the tangible elements associated with sleep. By identifying physical objects that evoke a sense of sleep or are commonly associated with sleep environments, this question aims to scaffold the physical design elements of the data physicalization prototype. The answers could provide a basic understanding of what tangible attributes could be incorporated to reflect the act of sleeping in a physical artifact.
+\subsection{Object Features}
+This section of the survey examines the preferences and expectations of participants regarding the visual representation and interactive features of a physical object that reflects their sleep data. The introduction to this section prepares the participants to imagine such an object, laying the groundwork for the following inquiries.
+\paragraph{Visual Representation Preferences}
+The initial inquiry, "Which sleep data would you find most valuable to be visually represented in the physical object?" investigates which types of sleep data respondents regard as essential. The selection of responses, which include sleep length, quality, stages, patterns, and heart rate variability, presents an array of options for data representation. This inquiry seeks to identify the most relevant sleep metrics for the user, offering a central focus for the development of the visual demonstration.
+
+The following questions inquire what information participants anticipate obtaining from a physical object that represents their sleep data. It also explores interaction modalities, asking whether users prefer a static object for an overall snapshot of sleep data or an interactive object for exploring different sleep metrics. Additionally, it explores preferences for temporal representation of sleep data, such as daily or weekly intervals, to determine the most informative presentation and aggregation strategy. These answers are critical to aligning the design of the object with the user's information needs, curiosity, and desired level of engagement.
+\paragraph{Communication and Interaction Mechanisms}
+The subsequent questions explore the communication mechanisms favored by participants for receiving data from and interacting with the physical object. These inquiries are vital for designing a user experience that is intuitive and enjoyable. The responses, which range from touch-based, light indicators, shape-changing, projection, and sound for communication (output), to touch-based, voice, and gestures for interaction (input), providing an extensive range of design possibilities.
+\subsection{Object Physicality}
+This portion of the study explores participants' tendencies towards the portability, placement, and dimensions of the physical item that represents their sleep data. We asked whether users prefer a portable object or a stationary object displayed in a specific location. If a stationary object is preferred, it further inquires about the preferred location within the home or office. It also inquires about the desired size of the object, offering options from small to large to determine the ideal dimensions that are visible yet not obtrusive in the chosen environment. These responses help determine the form factor of the object, ensuring that it fits well with the user's lifestyle and environment.
+
+\section{Survey Results}
+
+\subsection{Participants}
+A total of 156 participants, mostly recruited via an e-mail distributor, attended for this study. The participants' demographics revealed a range of ages, with an average age of 28.53 years. The gender distribution was as follows: 86 female, 55 male, 10 preferred not to say, 3 identified as non-binary, and 2 with other gender identities.
 
 
-\section{Results}
-\subsection{Sleep-Related Questions}
+\subsection{Sleep Health}
+With this section, we aimed to gain insights into participants' sleep habits and sleep health. 36 participants reported having sleep disorders or conditions that affect their sleep, while 108 did not. Some of those conditions were eating disorders and also mental disorders like anxiety and depression. In addition, 99 participants reported specific factors that impact the quality of their sleep, such as noise, temperature, and stress, while 45 did not. Regarding their average sleep duration, participants reported an average duration with a mean of 7.03 hours. Participants rated their sleep quality on a scale from 0 to 10, with a mean score of 6.6. The SATED-Score of the questionnaire resulted in an overall mean of 7.34.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{graphics/SATED_Charts.png}
+    \caption{SATED Questionnaire}
+    \label{fig:SATED}
+\end{figure}
 
-    \textbf{Sleep Disorders:} 36 participants reported having sleep disorders or conditions that affect their sleep, while 108 did not.
-    
-    \textbf{Factors Affecting Sleep:} 99 participants reported specific factors that impact the quality of their sleep, such as noise, temperature, and stress, while 45 did not.
-    \textbf{Average Sleep Duration:} Participants reported an average sleep duration ranging from 3 to 12 hours, with a mean of 7.03 hours.
-    \textbf{SATED Questionnaire}
-    Participants responded to the Sleep Assessment in Daily Life (SATED) questionnaire, which evaluated various aspects of their sleep satisfaction, daytime alertness, and sleep duration.
-    \begin{figure}
-        \centering
-        \includegraphics[scale = 0.2]{graphics/SATED_Charts.svg}
-        \caption{SATED Questionnaire}
-    \end{figure}
+\subsection{Sleep Tracking}
+To comprehend how the participants use the present sleep tracking devices, we inquired about their usage habits and familiarity with them. The survey indicates a striking contrast in the usage of health trackers for monitoring sleep among participants. The majority of participants, 89 individuals, have never used sleep trackers before, while 30 former users stopped due to various reasons, such as a perceived lack of value, discomfort or forgetfulness. In contrast, 25 participants continue to find the use of these devices valuable for tracking their sleep.
 
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.24]{graphics/SATEDvsSELF.svg}
-        \caption{Self-Assessment and Total SATED Score}
-    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{graphics/Used_Sleep_Tracking.png}
+    \caption{Sleep Tracking Experience}
+    \label{fig:tracking_experience}
+\end{figure}
 
-    
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{graphics/Interested_in_Using.png}
+    \caption{Interest in using a Sleep Tracker}
+    \label{fig:interest_using}
+\end{figure}
 
-    \textbf{Sleep Quality:} Participants rated their sleep quality on a scale from 0 to 10, with a mean score of 6.6.
-    \textbf{Comparison with SATED Mean:} A comparison between participants' own perception and the results from the SATED questionnaire indicates that the participants are experiencing a better sleep quality compared to their own perception. Own perception sleep quality mean (6.6), SATED sleep quality mean (7.34).
-    \textbf{Sleep Tracking:} A majority (89) reported never using health trackers to record their sleep, while 30 had used them in the past but discontinued use. Of those who discontinued use, reasons included lack of interest or perceived values, discomfort or inconvenience, forgetfulness, and other factors. 25 participants reported continued use of sleep trackers.
+\paragraph{Non-Users Specific}
+Those who chose not to use a sleep tracker (\autoref{fig:tracking_experience}) were asked if they would be interested in using one, showing that 49 people wanted to use a sleep tracker, while 39 did not (\autoref{fig:interest_using}). Reasons for rejecting a sleep tracker include feeling uncomfortable wearing it in bed, especially for those who already sleep well, concerns about privacy due to sharing data, including noise and medical records, and a dislike of technology because it may disrupt sleep or feel controlling.
 
+\paragraph{Discontinued-Users Specific}
+Participants who discontinued sleep tracking cited various reasons, including practical, technical, and personal factors. Common concerns were discomfort while sleeping and skepticism about the accuracy and usefulness of the data. Technical issues were related to device malfunctions and the need for frequent charging. Additionally, participants mentioned personal factors such as improved mental health, a desire to reduce nighttime technology use, and forgetting about the device.
+
+\paragraph{Discontinued- and Continued-Users Specific}
+The participants, categorized as Discontinuing and Continuing Users (\autoref{fig:tracking_experience}), were inquired regarding any enhancements in their sleep habits while utilizing sleep tracking. Out of the total respondents to this query, 38 participants reported no improvements while 17 affirmed improvements in their sleep habits through sleep tracking.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale=0.8]{graphics/Tracking_Improve.png}
+    \caption{Improvement through Sleep Tracking}
+    \label{fig:improvement}
+\end{figure}
+Participants who \textbf{did not} see sleep improvements with trackers mainly used them for information, not for sleep enhancement. They often lacked motivation to change sleep habits and expressed doubts about data accuracy, sometimes misinterpreting stillness as sleep. Factors like noise, temperature, discomfort from the tracker, and sleep anxiety impeded sleep quality improvement. The trackers failed to provide practical guidance, leading some to find no beneficial changes in their sleep routines despite knowing their patterns. Inconsistencies in tracking and perceived low value from the data further limited their effectiveness.
+
+Participants who \textbf{did} observe sleep improvements with trackers also noted several limitations. Technical issues like short battery life affected tracking effectiveness, and the need for manual alarm or sleep time settings each night was inconvenient. Forgetting to activate the device was a common oversight. While trackers raised awareness of sleep patterns, they didn't significantly change sleep duration or timing for most.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale=0.8]{graphics/How_Many_Nights.png}
+    \caption{Weekly Tracking Frequency}
+    \label{fig:weekly}
+\end{figure}
+
+The majority of participants (26) used a sleep tracker daily, while those using it less than 5 nights a week (22) cited various reasons for lower frequency. Device-related issues, especially battery life, frequent charging needs, and discomfort, hindered daily usage. Forgetting to use or activate the tracker suggested a lack of creating a new habit or perceived immediate benefit. The absence of noticeable help or benefits from the tracker reduced motivation for regular use.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{graphics/Share_Data.png}
+    \caption{Share Sleep Data}
+    \label{fig:share}
+\end{figure}
+
+Lastly for the section of sleep tracking, all participants were asked about their willingness to share their sleep data with others. 
+
+Participants who \textbf{did not} want to share sleep data cited privacy concerns, viewing sleep as personal and fearing data misuse. They preferred anonymous data sharing, if necessary.  Additionally, some worried about the negative impact on sleep quality from sharing. There was a general disinterest in sharing or comparing sleep data, with doubts about its value or personal benefit.
+
+Participants who chose \textbf{"It depends on..."} value anonymity, often agreeing to share for scientific or medical reasons if their identity is protected. They're more willing to share with trusted individuals like close relations or medical professionals than unknown entities. Concerns about secure data handling and privacy regulations are prominent. Some are comfortable sharing only statistical or aggregated data.
 
 \subsection{Object Design Preferences}
-    Participants were presented with questions related to the design of a physical object representing sleep data:
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=\paperwidth/2]{graphics/word-cloud_Things_resize.png}
+    \caption{Word-Cloud Things / Concepts}
+    \label{fig:things}
+\end{figure}
+In this section, participants were presented with questions related to the design of a physical object representing sleep data. The question "What thing(s)/concept(s) do you associate most with sleeping?" resulted in a large variety of different ideas, which are categorically displayed on a word-cloud (\autoref{fig:things}). One of the most frequently occurring things was the "bed" (27), which is part of the "bedding" category, together with entries like "pillow" (5) or "mattress" (3). The biggest category "calmness" had mostly occurrences like "rest" (10), "relax" (13), "quiet" (8) or "recovery" (6).
 
-    \begin{itemize}
-        \item \textbf{Things/Concepts Associated with Sleep:} Participants associated sleep with concepts such as rest, relaxation, and recovery.
-        \item \textbf{Preferred Sleep Data for Visualization} The majority of participants indicated interest in visualizing sleep quality, sleep duration, and sleep stages.
-        \item \textbf{Expected Insights:} Participants expected the object to help them understand sleep quality and efficiency, identify sleep disturbances, increase self-awareness of sleep habits, and motivate them to improve sleep.
-        \item \textbf{Time Interval for Representation:} Daily and weekly representations were favored.
-        \item \textbf{Interaction and Communication:} Participants preferred touch-based and light-based interaction and communication with the physical object.
-        \item \textbf{Portability and Position:} Most participants preferred a portable object placed next to their bed, similar in size to a smartphone.
-    \end{itemize}
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=\paperwidth/2]{graphics/word-cloud_physical_resize.png}
+    \caption{Word-Cloud Physical Object}
+    \label{fig:physical}
+\end{figure}
+
+The following query "What physical object(s) do you associate most with sleeping?" resulted primarily in entries of the category "bedding", as shown in the word-cloud (\autoref{fig:physical}). The word "bed" had a total count of 72, followed by pillow with 46.
+
+In the next set of questions the participants were asked to imagine an object, capable of physicalizing sleep data, and answer the questions based on that object. The participants particularly valued the representation of sleep quality (110), sleep duration (77), and sleep stages (142) as the most important types of sleep data that the device should track. The most expected insights to gain from the object were understanding sleep quality and efficiency (97), identifying sleep disturbances or disruptions (89) and increasing self-awareness of sleep habits (83). Both questions allowed multiple selections. The imagined object was mostly preferred as interactive (95) instead of static (34) and should be able to represent the sleep data both ranging from daily to weekly (61). The preferred method of initial interaction between the user and the device was predominantly touch-based (87), with light indicators as the second choice (43). The interaction between the user and the object was again preferred to be touch-based (118). Participants also liked the object to be portable (92), instead of stationary (36) and predominantly wanted it to be placed beside their bed (99).
+
+
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{graphics/Size.png}
+    \caption{Preferred Object Size}
+    \label{fig:size-selection}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{graphics/Sizeselect+prototype.png}
+    \caption{Size Selection}
+    \label{fig:size}
+  \end{minipage}
+\end{figure}
+
+For the last question of the online survey, participants mostly preferred the object to be rather "smartphone-sized", as shown in \autoref{fig:size-selection} and \autoref{fig:size}.
+
 
 \section{Online Survey Discussion}
+This chapter details how the analysis of existing studies and theories, and the study results, were employed in the development
+of the tangible prototype concept. The structure follows the research questions presented earlier.
 
-\subsection{Important Concepts/Themes}
-\begin{itemize}
-    \item \textbf{Interest in sleep tracking:} The fact that participants showed interest in sleep tracking despite different sleep habits underlines the importance of developing a user-friendly and appealing device.
-    \item \textbf{Sleep quality and satisfaction:} The participants' statements about their sleep quality and satisfaction, both from their own perceptions and via the SATED questionnaire, provide information about an incorrect self-assessment regarding their own sleep quality. This suggests that a device as an additional aid could provide a more accurate idea of actual sleep quality.
-\end{itemize}
+\paragraph{What categories of sleep data are relevant for effective visualization and understanding?} Given that sleep habits and overall sleep health vary greatly from person to person and are not yet fully comprehended \cite{Define_Sleep_Health}, identifying the relevant variables in sleep data was crucial for obtaining qualitative insights from the prototype. Because the actual data representation would alter the object's visual design \cite{Oppotunieites_Challenges_DataPhysicalization}, it was essential to address RQ1 before proceeding with the design process. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{graphics/SATED_vs_Self.png}
+    \caption{Self-Assessment and Total SATED Score}
+    \label{fig:self}
+\end{figure}
+The comparison of the self-assessment and the overall SATED-score (\autoref{fig:self}) show a discrepancy in the evaluation of ones sleep quality, which could offer potential for using an overall sleep quality-score as a relevant data metric. In addition to the results of the object design preferences, we decided to primarily use sleep quality, sleep duration, and sleep stages as a relevant data metric for our prototype, since those variables were most anticipated by the surveys participants and are also mostly used in other consumer sleep tracking methods \cite{Consumer_SleepTracking}. The preference of the majority for the capability to analyze both daily and weekly data led to its incorporation into the design phase. This approach is akin to the use of historical data in ambient designs, which has been shown to boost user motivation for specific actions \cite{rodriguez_cammina_2013}.
 
-\subsection{Potential Objects:} 
-\begin{itemize}
-    \item 
-\end{itemize}
+\paragraph{How should a physical prototype that communicates sleep data look?}
+The survey results underscore an importance of "calmness" (\autoref{fig:things}) in the context of sleep, suggesting a design approach that prioritizes the creation of a serene and restful atmosphere. The presence of "bedding" in both word-clouds (\autoref{fig:things}, \autoref{fig:physical}) together with the preferences towards a touch-based interaction are indicating towards tangible elements.
+The preference of having an interactive object opens an opportunity for dynamic physicalizations, which leads to data encoding in form of behavioral changes of the physical representation \cite{Representation_Modality_Data_Artifacts,Oppotunieites_Challenges_DataPhysicalization}. Comparing the results from the \textbf{Discontinued-Users}, \textbf{Continued-Users}, and the participants who were tracking less than 5 days a week, experienced no benefits or help from the tracker, leading to decreased motivation, ultimately suggesting that motivation is a key issue, which was mentioned in studies before \cite{Stage_Based_Model, Challenges_Oppotunieties_SleepTracking}. This implies that an alternative approach, such as ambient representation, could improve motivation by making data easier to comprehend with less effort required from the user.
 
-\subsection{Placement (Where Should It Be):} 
-The preference for a sleep tracking device that doesn't require participants to wear anything or be intrusive suggests that the prototype should be unobtrusive in the sleep environment. Consider placing it near the bed or in a location where it seamlessly integrates into the bedroom.
-\subsection{Relevant Data:}
-\begin{itemize}
-    \item \textbf{Factors Affecting Sleep:} The specific factors mentioned by participants that affect their sleep (e.g., noise, temperature) could inform the type of data the prototype collects and presents. For example, if noise negatively impacts sleep, the prototype could include a noise monitoring feature.
-    \item \textbf{Sleep Quality and Satisfaction:} Given the participants' focus on sleep quality and satisfaction, the prototype should provide meaningful data related to these aspects. This could include sleep scores, sleep duration, and other metrics that help users understand and improve their sleep quality.
-    \item \textbf{Sleep Disorders:} For participants with sleep disorders, the prototype could offer specific features or recommendations tailored to their conditions, aiming to improve their sleep quality.
-\end{itemize}
-
-%What info from the survey can we use in designing the prototype
-%- which concepts/themes are important
-%- which potential objects
-%- where should it be
-%- how should it display info
-%- which data?
+\paragraph{How should a physical prototype communicate sleep data?}
+The survey results gave a clear direction towards a touch-based interaction and communication between the user and the object. In the realm of data physicalization, a touch-based interaction doesn't necessarily have to be an interaction via a touch-screen, it also can be the sensation of feeling temperature or surface changes of an object \cite{Oppotunieites_Challenges_DataPhysicalization}. The survey question about the preferred ways of communication also offered a few limitations, since the majority of participants are very familiar with the use of a touch-screen, which could have led to a biased decision. Keeping that in mind and also considering the amount of participants preferring light-indicators as form of communication, they could pave the way to have a comforting ambient visualization which incorporates a certain "calmness" by using calming light effects.
 
 \chapter{Focus Group}
+As the online survey still had a few ambiguities and no clear object or communication method emerged, we decided to hold an additional focus group. This focus group was intended to provide a clearer direction for our prototype by actively creating objects and to provide a comparison with the results from the online survey.
 \section{Method}
+For the focus group, participation was open and unrestricted, mirroring the approach taken for the online survey. Upon completion of the online survey, participants were given the opportunity to indicate their interest in future studies. Those who opted in provided their email address, which we used to send invitations to the focus group. A subset of these participants chose to attend.
 \subsubsection{Participants}
 
-\begin{itemize}
-    \item \textbf{Participant 1:} A researcher in the field of software engineering and machine learning
-    \item \textbf{Participant 2:} Someone who has recently completed research at a different academic chair
-    \item \textbf{Participant 3:} A research assistant from a different chair
-    \item \textbf{Participant 4:} Another researcher who is actively involved in ongoing projects on the chair Human-Centered Ubiquitous Media
-    \item \textbf{Participant 5:} A student who has experience with sleep disorders
-    \item \textbf{Participant 6:} A Ph.D. student who is also active at the chair of Human-Centered Ubiquitous Media
-\end{itemize}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Participant} & \textbf{Professional Background}                                          \\ \hline
+1                    & Researcher in software engineering with a focus on machine learning       \\ \hline
+2                    & Individual with recent research experience at an alternative academic institution \\ \hline
+3                    & Research assistant affiliated with a different academic department        \\ \hline
+4                    & Researcher engaged in projects at the human-centered ubiquitous media chair \\ \hline
+5                    & Student with personal experience in managing sleep disorders              \\ \hline
+6                    & Doctoral candidate active in the human-centered ubiquitous media department \\ \hline
+\end{tabular}
+\caption{Academic and Professional Backgrounds of Focus Group Participants}
+\label{tab:participants_background}
+\end{table}
+
 \subsubsection{Survey Content}
-This focus group aimed to further elaborate on the results of the online survey. Participants were actively encouraged to work together with tools to create or design a prototype that corresponds to their ideas for implementing a physical visualisation of sleep data. The participants were divided into three groups and after a short introduction they had about 30 minutes to develop a prototype. To help them, the participants were given some sleep tracking variables to use, such as sleep duration, sleep quality and sleep stages, which were also the most requested variables from the online survey. Of course, the participants were also allowed to use their own variables. As additional support, a guiding form was used, which, with the help of some specific questions regarding the prototype, could help to develop a well thought-out design.
-\section{Results}
-The focus group discussion generated some interesting concepts and themes that provided important guidance for the development of the sleep monitoring prototype. In general, there was a collective interest among participants in sleep monitoring methods, even though they do not currently monitor their own sleep. Some of the key points and findings from the focus group include:
+Participants were actively encouraged to work together with tools to create or design a prototype that corresponds to their ideas of implementing a physical visualization of sleep data. The participants were divided into three groups and after a short introduction they had about 30 minutes to develop a prototype. To help them, the participants were given some sleep tracking variables to use, such as sleep duration, sleep quality and sleep stages, which were also the most requested variables from the online survey. Of course, the participants were also allowed to use their own variables. As additional support, a guiding form was used, which, with the help of some specific questions regarding the prototype, could help to develop a well thought-out design.
+\section{Focus Group Results}
 
-\begin{itemize}
-    \item \textbf{Interest in sleep tracking:} Participants were interested in the topic of sleep tracking, even if they do not do it themselves.
-    \item \textbf{Comfort and portability:} An important theme that emerged was the desire for more comfort while sleep is being recorded. Participants preferred non-invasive solutions.
-\end{itemize}
+\textbf{Group 1} presented a docking station designed to blend into the bedroom environment and to act as a sleep stage indicator and gentle wake-up light. The complementary element, conceived as a portable object, would provide a tangible representation of sleep quality and act as a stress relief toy. The squishiness of this object would indicate sleep quality, with additional playful elements such as a ball and cup game function. The thread connecting the ball to the cup represents sleep duration; its length varies according to the users sleep duration, making the game unplayable if the sleep duration was too short.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{graphics/FocusGroup1.jpg}
+    \caption{Prototype docked}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{graphics/FocusGroup1_2.jpg}
+    \caption{Prototype undocked}
+  \end{minipage}
+\end{figure}
+
+\textbf{Group 2} proposed a sleep tracker integrated with an alarm clock that could project sleep data onto the wall. This concept included a color-coded sleep score and an interactive display that provided a summary of sleep patterns, duration and quality metrics such as heart rate variability.
+
+\textbf{Group 3} presented an interactive design resembling a 3D bed with a clock that deforms to illustrate sleep quality over time, suggesting an interaction through manual rotation of the pointer to reveal different sleep events. Also, while turning the clocks pointer to a certain timestamp, the clock's form alters to reflect the user's sleep position at various times.
+
+Notes and sketches done during the Focus Group can be found in the \autoref{appendix:appendix_A}.
+
 \section{Focus Group Discussion}
-\subsection{Potential Objects}
-Focus group participants had several ideas for potential objects to work as prototypes for sleep monitoring. These ideas are alternative suggestions of the design and could be explored further in future studies. They are the following ideas:
 
-\begin{itemize}
-    \item \textbf{Docking station:} In group 1, the participants proposed a two-part object, one is a docking station that can be placed next to the bed. The other additional object is a small portable ball connected to a string and a collection container. This object changes colour to indicate sleep stages and can be pressed to relieve stress. The length of the string changes according to the length of sleep, allowing successful play with the object only when there is enough sleep. It also warms up to signal bedtime and can act as an alarm light. The docking station, in turn, is responsible for charging the wearable sphere and also allows a more detailed view of the collected sleep data.
-    \item \textbf{Integrated alarm clock:} In group 2, participants suggested integrating sleep monitoring into a common alarm clock. This device would project sleep data on the wall and include important statistics such as, colour-coded sleep quality, sleep duration and heart rate information. 
-    \item \textbf{Interactive alarm clock:} In group 3, participants suggested an interactive wall clock. The hand of the clock indicates when certain sleep events occur and the entire mattress-shaped clock deforms according to the shape of the mattress at that time.
-\end{itemize}
+\paragraph{What categories of sleep data are relevant for effective visualization and understanding?}
+The focus group creations highlighted the importance of sleep duration, sleep quality and sleep stages as the primary categories of data relevant to visualization. This aligns with the earlier preferences expressed in the online survey, suggesting these metrics are not only fundamental but also the most sought-after data points for users interested in sleep wellness. The inclusion of additional metrics such as heart rate variability was also suggested to enhance sleep wellness. 
 
-\subsection{Placement (Where Should It Be)}
-Participants gave their preferences for the placement and portability of the prototype:
+\paragraph{How should a physical prototype that communicates sleep data look?}
+The designs in Groups 2 and 3 suggest that subtlety in the environment, such as a clock or ambient display, is preferred for a constant but unobtrusive presence of sleep data. Group 1's approach introduces gamification as a means of not only informing, but actively encouraging users to interact with their data and potentially adopt healthier sleep habits.
 
-\begin{itemize}
-    \item \textbf{Near the bed:} Similar to the online survey, in Group 1 and Group 2 participants suggested placing the prototype near the bed, for example on a bedside table.
-    \item \textbf{Portability:} Several participants stressed the importance of portability. They wanted the device to be able to be placed in different places if they were not sleeping at home.
-\end{itemize}
-
-\subsection{Relevant Data}
-Participants had different views on the relevance of the data:
-\begin{itemize}
-    \item \textbf{Data use:} Participants questioned how the data collected could be used. Some were concerned about whether the data could actually help improve sleep habits, especially if they already had good sleep routines.
-    \item \textbf{Differentiation from smartphones:} Participants emphasized that the sleep monitoring prototype should offer something equivalent to functions that cannot be performed by a smartphone. This could be physical interactions or assistance in waking up.
-\end{itemize}
-
-
-%What info from the focus can we use in designing the prototype
-%- which concepts/themes are important
-%- which potential objects
-%- where should it be
-%- how should it display info
-%- which data?
+\paragraph{How should a physical prototype communicate sleep data?}
+The prototypes developed by each focus group primarily utilized visual means to convey sleep data, affirming the presumption from our online survey that visual representation is a preferred mode of data communication. Additionally, Group 1's prototype enriches this visual communication with tangible feedback, offering a physical dimension to the data, while Group 2's design invites touch-based interaction, possibly indicating a user preference for tangibility in conjunction with visual data presentation. These findings suggest that a multi-sensory approach, combining both visual and tactile information, may enhance the user's understanding and engagement with their sleep data.
 
 \chapter{Prototype Design}
-
+In this chapter, we will explain how the results of the previous section have been put into practice. The aim
+was to build and program a haptic prototype, its functionality and the interconnected systems.
 \section{Design}
-The design of the prototype aimed to create a sensory and intuitive representation of sleep data. Considering the participants' preferences for light-based interaction and non-intrusiveness, aligning with the study's goal of making sleep data accessible, engaging and comprehensible. After analyzing the results from the survey, we came up with the design of a candle, representing the participants' association of restfulness, relaxation and calmness towards sleep. Since most participants were interested in a visualization of especially the sleep quality, the sleep duration and the sleep stages, the candle is able to display those variables in a manner that embodies data physicalization principles. Sleep stages are communicated through a square alignment of four screens, with each screen displaying the same image. The images consist of colored bars stacked above each other, indicating the duration of each sleep stage. The candle is able to display following sleep stages: light sleep, deep sleep, REM, and awake. The sleep duration is communicated via a single LED on top of the candle representing the candles' flame. The brightness of the flame shows how healthiness of the slept duration by comparing the users sleep duration to a considered healthy amount of sleep hours. The flame also is able to communicate the users sleep quality by having a flickering flame. The more the flame is flickering the worse the tracked sleep quality. The overall sleep quality is calculated by comparing the presence of certain sleep stages and the actual sleep duration by considered healthy sleep habits. This choice reflects a holistic approach to visualizing sleep data that resonated with participants' expectations and preferences.
+As the prototype was unable to extract data directly from a commercial health tracker, we needed to develop a complementary app that would require an one-time configuration and then run continuously in the background. This app uses the Health Connect API\footnote{\url{https://developer.android.com/health-and-fitness/guides/health-connect}} to access the sleep data of various health tracking apps, including Samsung Health\footnote{\url{https://www.samsung.com/de/apps/samsung-health/}} in our case. On first launch, the app prompts the user to allow access to Health Connect; this permission must be granted in order to retrieve the sleep data. In addition, permissions must be set within the Health Connect app to allow both the Visualizing Sleep app and any commercial health tracking app to share data with Health Connect (\autoref{fig:HealthApp-Access}). This setup is a one-time process that ensures continuous and autonomous data transfer from the health tracking device to the prototype (\autoref{fig:App-Setup}).
+
+The design of the prototype aimed to create a sensory and intuitive representation of sleep data. Although, considering the participants preference towards a touch-based communication, we decided to go for light-indicators, since they are far more simple and also wanted by a good amount of participants. After analyzing the results from the survey, we came up with the design of a candle, representing the participants' association of restfulness, relaxation and calmness towards sleep. Since most participants were interested in a visualization of especially the sleep quality, the sleep duration and the sleep stages, the candle is able to display those variables in an ambient manner. Sleep stages are communicated through a square alignment of four screens, with each screen displaying the same image. The images consist of colored bars stacked above each other, indicating the duration of each sleep stage. The candle is able to display following sleep stages: light sleep, deep sleep, REM, and awake. The sleep duration is communicated via a single LED on top of the candle representing the candles' flame. The brightness of the flame shows the healthiness of the slept duration by comparing the users sleep duration to a considered healthy amount of sleep hours \cite{chaput_sleeping_2018}. The flame also is able to communicate the users sleep quality by having a flickering flame. The more the flame is flickering the worse the tracked sleep quality. 
+
+Since there's no standard method for calculating sleep quality and each commercial health tracking company uses their own unique approach, we've developed our own method. It includes sleep habits that are statistically viewed as healthy.
+The overall sleep quality is calculated using a sleep stage deviation, an efficiency deviation, an awakening deviation and a duration deviation. The sleep stage deviation is calculated by determining the deviation of each phase compared to a statistically healthy value \cite{patel_physiology_2023} and then multiplying the result with a given weight ranging from 0 to 1, based on its importance for the overall sleep quality. The deviation in sleep efficiency is calculated by using a benchmark of what's considered a healthy sleep efficiency, which refers to the actual time spent asleep divided by the total time spent in bed \cite{ikeda_relationships_2022, winser_minimum_2013}. The calculation of the awakenings deviation and the duration deviation is done similarly to the efficiency deviation \cite{hirshkowitz_national_2015}. The four deviations are summed, after each of them is multiplied by a specific weight value that takes the importance of each factor into account. The resulting value is restricted to a range between 0 and 100. This value is then subtracted from 100 so that the best possible score is 100 (\autoref{appendix:appendix_B}).
 
 \section{Implementation}
 
-\begin{figure}
+The communication flow involves a Flutter application that retrieves sleep data from a commercial app via the Health Connect API. This data is then transferred to a Firebase Realtime Database. An ESP32 board periodically retrieves this data and displays it through its screens and LED system. A dedicated Cloud Function monitors the database for new entries, processes the latest data by extracting relevant information, and formats it into a compact structure suitable for the ESP32 board's limited storage.
+\subsection{Visualizing Sleep App}
+The application was written in Flutter in order to make it accessible for both Android and iOS. Libraries and packages implemented in the app are:
+\begin{table}[h]
+\centering
+
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Package Name}                  & \textbf{Description} \\ \hline
+\texttt{firebase\_core}\footnote{\url{https://pub.dev/packages/firebase_core}}                & For Firebase initialization \\ \hline
+\texttt{firebase\_auth}\footnote{\url{https://pub.dev/packages/firebase_auth}}                & For Firebase user authentication. \\ \hline
+\texttt{flutter\_background\_service}\footnote{\url{https://pub.dev/packages/flutter_background_service}}  & To create a background service for fetching and uploading. \\ \hline
+\texttt{flutter\_local\_notifications}\footnote{\url{https://pub.dev/packages/flutter_local_notifications}} & To show notifications of the uploading process. \\ \hline
+\texttt{health}\footnote{\url{https://pub.dev/packages/health}}                        & To access data from either Health Connect or Apple Health. \\ \hline
+\texttt{permission\_handler}\footnote{\url{https://pub.dev/packages/permission_handler}}           & To handle permissions required to access health data. \\ \hline
+\end{tabular}
+\caption{Summary of used Packages}
+\label{tab:packages}
+\end{table}
+
+
+The background service package also allows a start-on-boot function, which is useful if the user tends to switch his phone off during the night. The apps UI resembles the image of a candle\footnote{\url{https://www.svgrepo.com/svg/53326/candle}}, which has a creative common 0 license, ensuring an intuitive interaction. If the screen gets tapped, the background service gets started, and the candle is lit. Tap again to end the background service and unlit the candle \autoref{fig:App-Setup}. 
+\subsection{ESP32 Board}
+The calculations are done by an ESP32 DEVKIT Board, which is able to power four 2.8 TFT SPI Screens with a resolution of 240x320 pixels, whilst also controlling the brightness and the flickering of a LED. The sleep stages are drawn on the screen using Bodmers TFT\_eSPI\footnote{\url{https://github.com/Bodmer/TFT_eSPI}} library, which is compatible with the Arduino and PlatformIO IDE. The height of each bar is calculated by determining what fraction of the total sleep duration the current stage's duration represents, and be further used to scale the display height accordingly. It then draws this bar on the display using the function "fillRect", from Bodmers library, with its top left corner positioned at a calculated y-offset subtracted by the bar height. Finally, the y-offset is decreased by the bar height to adjust where the next bar will be drawn, effectively moving the drawing position up for subsequent bars. The brightness of the LED is based on how far the total sleep duration deviates from a considered healthy sleep duration. The brightness is set to maximum when the total duration matches the benchmark value and decreases linearly as the difference increases. The LED's flickering is calculated by incorporating the previously discussed sleep quality value. The prototype uses two different flicker animations. One animation randomly decreases the brightness, which becomes more apparent the lower the quality value gets. The second animation completely shuts off the LED, which occurs when a random generated integer is larger then the sleep quality value. The screens and the ESP board are all mounted to a custom PCB (Printed Circuit Board), which splits the signal from the same data-pins to all screens and powers the LED using available data-pins (\autoref{fig:PCB}).
+
+\subsection{Firebase}
+The users sleep data is stored and organized in a Realtime Database hosted by Google's Firebase\footnote{\url{https://firebase.google.com/docs/database}}. Since the whole system is build to run with multiple prototypes, we required a secure authentication method, to separate and also protect the users' data. We decided to use the anonymous-authentication\footnote{\url{https://firebase.google.com/docs/auth/android/anonymous-auth}} method, provided by Firebase, because it simplifies the whole uploading and fetching process of the sleep data, while being secure. To distinguish the data from different users, the sleep data is uploaded into a uniquely created directory, which consists of a string with the phones OS and its device-ID. This ensures a safe and anonymous data access by the prototype, without confusing the data entries. An additional Cloud-Function\footnote{\url{https://firebase.google.com/docs/functions}} listens for new added data entries, loops through the data, and collects data to simplify and optimize the fetching process for the ESP board. By looping through the data, the function also counts the total number of times someone awakens during the night, which is not provided by the Health Connect API.
+
+The whole setup with the described components and their functions is visualized in \autoref{fig:inout}. The code
+is also available on GitHub\footnote{\url{https://github.com/MarcusReiners/SleepVisualization}}.
+
+
+\begin{figure}[H]
     \centering
     \includegraphics[height=\paperheight, width=\paperwidth, angle=90, keepaspectratio]{graphics/InputOutput.drawio (3).pdf}
     \caption{Implementation and Interaction Layout Diagram}
-    \label{fig:enter-label}
+    \label{fig:inout}
 \end{figure}
 
-\chapter{Discussion and Future Work}
-\section{Discussion}
-\section{Limitations}
-\section{Future Work}
+\chapter{Discussion}
+
+In the previous chapters, we provided a detailed rationale and methodology behind the development of our application and prototype. This final chapter is dedicated to evaluating the results of our prototyping efforts, while acknowledging the limitations of our project and suggesting ways for future research. Previously, we outlined the research process to each of our research questions. We will now outline how our final prototype meets these established criteria, with a particular focus on its usability in sleep environments. This includes a critical examination of how our prototype avoids disturbing the serenity of a calming and relaxing sleep environment.
+
+\section{What categories of sleep data are relevant for effective visualization and understanding?}
+Tracking and documenting sleep can be achieved through a variety of metrics, with each user showing a preference for different metrics as each individual experiences sleep in their own unique way. So, to make it easier and more accessible for everyone to track their own sleep health, we have agreed on a global sleep quality score which, together with some other data from the sleep recording, calculates a value between 0 and 100, providing a simple and useful understanding of ones sleep quality. In addition, our prototype is able to communicate other metrics, like sleep duration and sleep stages, which is in alignment with both survey results and is comparable to sleep metrics used in commercial sleep tracking apps.
+
+\section{How should a physical prototype that communicates sleep data look?}
+We made the prototype resemble a candle by designing a printed circuit board, which allows for the attachment of 4 TFT screens at each side of the board, ending up with a cubic shape. The ESP32 board is connected at the bottom of the circuit board, leaving enough space in the inside of the cube for the LED's wiring, which is placed on top of the cube. A 3D print aids in visualizing the actual candle, by giving it a stand to also hide the ESP32 board at the bottom, while also offering enough stability to the whole structure. The stand has an opening on the side to leave enough space for a Micro-USB-Standard cable, which powers the whole prototype. The LED's wiring follows through a 3D printed wick, which holds a 3D printed flame-like milky-transparent object, encasing the LED inside of it. By using the ambient design principles inside the tranquil sleep environment, our aim is to help the user find relaxation, by making the communication with the prototype intuitive and effortless. The prototype is around the height of a smartphone with a width not larger than conventional candles. This design meets with the user's concept based on the survey results, offering a calming and relaxing environment.
+
+\section{How should a physical prototype communicate sleep data?}
+Our prototype incorporates the sleep data metrics discussed in RQ1, primarily displayed through a gentle light indication that seamlessly integrates into the sleep environment. The LED's flickering is designed to be subtle, mimicking the realistic effect of a candle without emitting disruptive light. When near a wall, this flickering casts shadows, enhancing the candle-like appearance. The LED's brightness and flicker intensity serve not as an alarm but as a gentle reminder: the poorer one's sleep, the more noticeable the light, encouraging mindfulness about sleep habits. When the user observes a pronounced flickering effect, they can engage with the candle directly. By doing so, they can see on the four screens the duration of each sleep stage from the previous night. This feature enables a swift review of potential disruptions, such as instances of waking up.
+
+It should be mentioned, that a vast majority of participants of the online survey asked for a touch-based communication, which would have led to different design and communication choices, as we are now being presented with. Still, we decided to go with light-indicators as our way of communication, since they offer a far more simple implementation into the prototype, compared to a touch-based output, like the manipulation of an object's surface. Also, we assumed that most participants of the online survey were thinking of touchscreens as a form of communication, which would not be a touch-based output.
+
+\section{Limitations and Future Work}
+There are some limitations to this project that provide opportunities for further research. In addition to a proper presentation of the data, our survey revealed a number of other factors that hinder motivation to continue using a sleep tracker. Participants who discontinued the use of sleep tracking devices frequently cited discomfort while wearing the devices or the inaccuracy of the recorded data as reasons for stopping. This suggests a path for additional research, focusing on exploring alternative tracking methods to achieve more comfortable and accurate outcomes. Additionally, the survey identified various factors, such as temperature or noise, that impede users from getting quality rest. Although addressing these factors directly may be challenging, a new prototype could be developed to measure certain environmental elements that prevent users from achieving sufficient sleep and inform the user about those factors. 
+
+Our prototype utilizes sleep habits identified in studies as an overall benchmark, allowing for a comparison with the user's own sleep patterns to get a result. Although this method provides a reasonable estimate of a user's sleep health, it may lead to misconceptions for some, as sleep varies greatly among individuals and is influenced by numerous factors such as age, gender, work, hobbies, etc. \cite{patel_physiology_2023}. This variation presents the opportunity for an alternative approach, where an analysis of an user's physical characteristics and daily activities is conducted to establish a personalized benchmark tailored to each individual. Creating a personalized sleep benchmark could also offer users with sleep disorders the opportunity to track their sleep habits without the need to compare them to standard norms, thereby enabling them to make improvements tailored to their specific goals.
+
+The prototype currently has a few limitations, both in software and hardware. It can only display sleep data from the previous night, although survey respondents expressed a preference for viewing data from both the last night and the past week. To address this, an additional Cloud Function could be implemented to gather and average the sleep stage durations from the last seven days, enabling a comprehensive weekly sleep visualization. The prototype's touchscreens could facilitate toggling between nightly and weekly data with a simple gesture. Another challenge is the continuous operation of the screens and LED, which must be manually turned off. A potential solution is to integrate an alarm clock function, allowing the candle to automatically power off when the user goes to bed and gradually reactivates upon waking. The prototype can only display the duration of each sleep stage stacked sequentially, whereas the original intention was to show real-time transitions between sleep stages. From a software perspective, this isn't a major issue, but the limited resolution of the screens (320 pixels in length) restricts the displayable time span to approximately 5.3 hours, assuming each minute of sleep stage is represented by one pixel. To address this, a feasible solution would be to use screens with a higher resolution, such as 720 pixels, which would allow for a 12-hour display. Alternatively, the resolution of the sleep stages could be reduced by only displaying stages that last longer than five minutes. Also, although developed in Flutter, the app is currently only available for Android. This is due to the different approaches required to execute and implement background tasks on different operating systems. iOS, in particular, imposes stricter restrictions and requires a greater focus on integrating native solutions than Android. In terms of setup, the prototype has limitations because it requires manual input of the WiFi SSID and password into the ESP32 board, along with the user's phone device ID. This is necessary because the user's sleep data is stored in a directory named using the device ID. A solution to simplify this process would be to enable Bluetooth connectivity between the ESP32 board and the user's phone. An additional setup feature in the app could then facilitate the transfer of all necessary information to the board via Bluetooth. Furthermore, for establishing a WiFi connection, incorporating a WPS (WiFi Protected Setup) feature could streamline the setup process significantly.
+
+Future research should focus on determining whether users effectively understand the feedback provided by the candle prototype, as well as assessing their reaction to the design. It's also important to conduct user testing of the phone application to identify any compatibility issues with different brands of health trackers. These aspects could be effectively assessed through individual interviews or short term studies.
+
+The primary focus should be to conduct a long-term study to verify the accuracy of the assumptions made during the development of the system, using the results of the study and existing research. In particular, this study should assess whether the visualization of sleep data in the system helps users to understand and potentially improve their sleep habits. In addition, to determine the effectiveness of the prototype's ambient design, a comparison of the system with a control group using medical-grade sleep tracking devices would be crucial.
+
 
 \chapter{Conclusion}
+In our study, we created a physical object based on the principles of ambient design. This object aims to address the difficulty of understanding personal sleep health. This is done by transforming the interpretation of collected sleep data into a more intuitive and accessible form. Our review of various sleep tracking studies revealed numerous challenges and opportunities in the field of sleep monitoring. \cite{Challenges_Oppotunieties_SleepTracking}. Common problems include a lack of understanding of sleep data, as commercial sleep tracking applications present this data primarily in the form of graphs and scores. While these can provide detailed insights into sleep patterns, they don't explicitly indicate whether one's sleep habits are healthy without further personal research. In addition, a significant challenge is the time required to thoroughly understand the complex nature of sleep data and sessions, which is essential to identify and implement beneficial changes to improve sleep health. To address these concerns, we aimed to present users' sleep data in a visually intuitive physical form that seamlessly integrates into the typical sleep environment.
 
+Our research primarily focused on the abstract concept of sleep health. To make this concept more tangible, we created a prototype designed to enhance users' connection with their sleep habits and stimulate greater interest in their sleep health. This prototype, inspired by various design directions identified in our research, is crafted to blend smoothly into a person's bedroom. It aims to offer a peaceful visualization of sleep patterns without interfering with daily activities.
+
+Our research required a deeper exploration of how the theory of a physical sleep data representation could be applied in practice. To inform our design, we developed survey questions based on these theoretical concepts. The results showed that a significant number of people had never used a health tracker, and many of those who did eventually stopped using it. The main reasons for this were discomfort and simply forgetting to use the device. For those who did use sleep tracking devices, there was no noticeable improvement in sleep habits, often due to a lack of motivation to change them. To refine our understanding of the prototype design, we decided to conduct a focus group. The purpose of this additional step was to gather different ideas and perspectives to help us build a solid foundation for the development of our prototype. These findings gave us a clearer understanding of the limitations of current sleep tracking devices and highlighted potential ways to effectively visualize sleep data.
+
+In response to the survey results, we came up with  a candle-like design that visually represents sleep quality, duration and the length of different sleep stages. This candle mimics the natural behavior of a real flame, using characteristics such as brightness and flicker to communicate sleep data in an intuitive and non-intrusive way. If users notice any anomalies in their sleep quality as represented by the candle, they can examine its body, which consists of four screens arranged in a cube. These screens use stacked colored bars to indicate the duration of different stages of sleep.
+
+Our research participants expressed a strong preference for a smartphone-sized, interactive object that could be placed next to the bed. We chose light-indication for our design because of its simplicity of implementation. This decision was also influenced by the fact that every prototype developed in our focus group used some form of visual data representation. 
+
+Our prototype will serve as the basis for future research in this area. The next stage is to test our findings in real sleep environments and to refine the prototype. Future research should then focus on improving the tracking experience, making it more comfortable, and integrating this improved tracking with a more intuitive data presentation. This approach should be evaluated in a long-term study to fully assess its effectiveness.
+
+This paper represents a first step into exploring alternative ways of representing sleep habits using ambient design principles, and investigating their potential to enhance these habits in our fast-paced, technology-centric world. Through continued research, we hope to make a significant contribution to the understanding of sleep habits and ultimately facilitate meaningful improvements in overall sleep health, mental health and physical well-being.
 
 \printbibliography
 
 All links were last followed on \today.
 
 \appendix
+
+\chapter{Appendix}
+\label{appendix:appendix_A}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.50]{graphics/SetupVis.png}
+    \caption{Setting up the App}
+    \label{fig:App-Setup}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{graphics/HealthConnectStartRights.png}
+    \caption{Giving Access to Health Apps}
+    \label{fig:HealthApp-Access}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{graphics/Prototyping.png}
+    \caption{Prototype v1}
+    \label{fig:Prototype_v1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{graphics/Prototype2.png}
+    \caption{Prototype v2}
+    \label{fig:Prototype_v2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{graphics/PCB.png}
+    \caption{Circuit Board Scheme}
+    \label{fig:PCB}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.25]{graphics/FocusGroupAppendix.png}
+    \caption{Focus Group Sketches}
+    \label{fig:Focus_Group_Sketches}
+\end{figure}
+
+\chapter{Appendix}
+\label{appendix:appendix_B}
+\text{Variables having an apostrophe at the end resemble the considered healthy benchmark value.}
+\begin{equation}
+    \centering
+    \textbf{s} = w_{1}\cdot\left | light{}' - light \right | + w_{2}\cdot\left | deep{}' - deep \right | + w_{3}\cdot\left | rem{}' - rem \right |
+\end{equation}
+\text{where $\textbf{s}$ is the sleep stages change, $w_{1}, w_{2}, w_{3}$ are weights, and $light, deep, rem$ are sleep phases.}
+\begin{equation}
+    \centering
+    \textbf{e} = \left | efficiency{}' - efficiency \right |
+\end{equation}
+\text{where $\textbf{e}$ is the efficiency change, and $efficiency$ is the initial sleep efficiency.}
+\begin{equation}
+    \centering
+    \textbf{a} = \left | awakenings{}' - awakenings \right |
+\end{equation}
+\text{where $\textbf{a}$ measures the change in the number of awakenings.}
+\begin{equation}
+    \centering
+    \textbf{d} = \left | duration{}' - duration \right |
+\end{equation}
+\text{where $\textbf{d}$ is the change in sleep duration.}
+\begin{equation}
+    \textbf{Sleep Quality} = 100 - \max(0, \min(v_{1} \cdot \textbf{s}
+    + v_{2} \cdot \textbf{e}
+    + v_{3} \cdot \textbf{a}
+    + v_{4} \cdot \textbf{d}), 100)
+\end{equation}
+\text{with $v_{1}, v_{2}, v_{3}, v_{4}$ as the respective weights.}
 %\input{latexhints/latexhints-english}
 
 \pagestyle{empty}
