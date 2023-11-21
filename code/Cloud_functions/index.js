@@ -76,7 +76,7 @@ exports.setSleepData = functions.database
       }
 
       const sleepAwakeningsEntry = admin.database()
-          .ref(`/AndroidSKQ1210908001/data/Awakenings`)
+          .ref(`/DeviceID/data/Awakenings`)
           .set(parseInt(awakeningAmount))
           .catch((error) => {
             console.error("Error setting Awakening amount:", error);
@@ -85,7 +85,7 @@ exports.setSleepData = functions.database
       promises.push(sleepAwakeningsEntry);
 
       const lightSleepEntry = admin.database()
-          .ref(`/AndroidSKQ1210908001/data/LightSleep`)
+          .ref(`/DeviceID/data/LightSleep`)
           .set(lightSleep)
           .catch((error) => {
             console.error("Error setting LightSleep:", error);
@@ -94,7 +94,7 @@ exports.setSleepData = functions.database
       promises.push(lightSleepEntry);
 
       const deepSleepEntry = admin.database()
-          .ref(`/AndroidSKQ1210908001/data/DeepSleep`)
+          .ref(`/DeviceID/data/DeepSleep`)
           .set(deepSleep)
           .catch((error) => {
             console.error("Error setting DeepSleep:", error);
@@ -103,7 +103,7 @@ exports.setSleepData = functions.database
       promises.push(deepSleepEntry);
 
       const remSleepEntry = admin.database()
-          .ref(`/AndroidSKQ1210908001/data/REM`)
+          .ref(`/DeviceID/data/REM`)
           .set(rem)
           .catch((error) => {
             console.error("Error setting REM:", error);
@@ -112,7 +112,7 @@ exports.setSleepData = functions.database
       promises.push(remSleepEntry);
 
       const awakeEntry = admin.database()
-          .ref(`/AndroidSKQ1210908001/data/Awake`)
+          .ref(`/DeviceID/data/Awake`)
           .set(awake)
           .catch((error) => {
             console.error("Error setting Awake:", error);
